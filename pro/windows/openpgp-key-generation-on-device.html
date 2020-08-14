@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="English">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>OpenPGP Key Generation On-Device | Nitrokey Documentation</title>
+    <meta name="generator" content="VuePress 1.4.1">
+    <link rel="icon" href="/favicon.png">
+    <meta name="description" content="User documentation of all Nitrokey products">
+    <link rel="preload" href="/assets/css/7.styles.142957b4.css" as="style"><link rel="preload" href="/assets/js/app.7b848162.js" as="script"><link rel="preload" href="/assets/js/23.8b709f46.js" as="script"><link rel="preload" href="/assets/js/17.ff412cb2.js" as="script"><link rel="prefetch" href="/assets/js/0.b1d75a8a.js"><link rel="prefetch" href="/assets/js/1.ed1640fc.js"><link rel="prefetch" href="/assets/js/10.b2a19813.js"><link rel="prefetch" href="/assets/js/11.79a0776b.js"><link rel="prefetch" href="/assets/js/12.c224ded1.js"><link rel="prefetch" href="/assets/js/13.a1f0f37e.js"><link rel="prefetch" href="/assets/js/14.ce3d22e3.js"><link rel="prefetch" href="/assets/js/15.156fe831.js"><link rel="prefetch" href="/assets/js/16.e5fe11d4.js"><link rel="prefetch" href="/assets/js/18.1fd4bc13.js"><link rel="prefetch" href="/assets/js/19.0bc49074.js"><link rel="prefetch" href="/assets/js/2.2c37b1e7.js"><link rel="prefetch" href="/assets/js/20.35b4a3b6.js"><link rel="prefetch" href="/assets/js/21.0de9cbd5.js"><link rel="prefetch" href="/assets/js/24.d6728a49.js"><link rel="prefetch" href="/assets/js/25.c712cf81.js"><link rel="prefetch" href="/assets/js/26.7acf0303.js"><link rel="prefetch" href="/assets/js/27.e738d162.js"><link rel="prefetch" href="/assets/js/28.e98346b2.js"><link rel="prefetch" href="/assets/js/29.dbe6087a.js"><link rel="prefetch" href="/assets/js/3.007a8238.js"><link rel="prefetch" href="/assets/js/30.71297d6f.js"><link rel="prefetch" href="/assets/js/31.f910f438.js"><link rel="prefetch" href="/assets/js/32.98225130.js"><link rel="prefetch" href="/assets/js/33.212c1617.js"><link rel="prefetch" href="/assets/js/34.004760d0.js"><link rel="prefetch" href="/assets/js/35.7601f267.js"><link rel="prefetch" href="/assets/js/36.0620a356.js"><link rel="prefetch" href="/assets/js/37.32ccba89.js"><link rel="prefetch" href="/assets/js/38.8c2f7f35.js"><link rel="prefetch" href="/assets/js/39.3fc24fa2.js"><link rel="prefetch" href="/assets/js/4.687f8fc9.js"><link rel="prefetch" href="/assets/js/40.41e44828.js"><link rel="prefetch" href="/assets/js/41.de0faba9.js"><link rel="prefetch" href="/assets/js/42.3b4756c8.js"><link rel="prefetch" href="/assets/js/43.c6b136ed.js"><link rel="prefetch" href="/assets/js/44.7f636945.js"><link rel="prefetch" href="/assets/js/45.0d1bb74f.js"><link rel="prefetch" href="/assets/js/46.1c7e642d.js"><link rel="prefetch" href="/assets/js/47.58fd515d.js"><link rel="prefetch" href="/assets/js/48.f3f78d4d.js"><link rel="prefetch" href="/assets/js/49.eb810bd3.js"><link rel="prefetch" href="/assets/js/5.84bb861f.js"><link rel="prefetch" href="/assets/js/50.bca84cb7.js"><link rel="prefetch" href="/assets/js/51.31ff8e75.js"><link rel="prefetch" href="/assets/js/52.2741299d.js"><link rel="prefetch" href="/assets/js/53.bfbcd7fb.js"><link rel="prefetch" href="/assets/js/54.908f14bd.js"><link rel="prefetch" href="/assets/js/55.87735d77.js"><link rel="prefetch" href="/assets/js/56.ff1ea98c.js"><link rel="prefetch" href="/assets/js/57.baaef198.js"><link rel="prefetch" href="/assets/js/58.27db4196.js"><link rel="prefetch" href="/assets/js/59.2dce939d.js"><link rel="prefetch" href="/assets/js/6.5fc68858.js"><link rel="prefetch" href="/assets/js/60.62849b4b.js"><link rel="prefetch" href="/assets/js/61.41a549f9.js"><link rel="prefetch" href="/assets/js/62.0f984df8.js"><link rel="prefetch" href="/assets/js/63.34282b32.js"><link rel="prefetch" href="/assets/js/64.e84144be.js"><link rel="prefetch" href="/assets/js/65.a413c219.js"><link rel="prefetch" href="/assets/js/66.89d9c466.js"><link rel="prefetch" href="/assets/js/67.d8f2117c.js"><link rel="prefetch" href="/assets/js/68.f3452f49.js"><link rel="prefetch" href="/assets/js/69.c21f3dec.js"><link rel="prefetch" href="/assets/js/70.f543ffe2.js"><link rel="prefetch" href="/assets/js/8.0589091c.js"><link rel="prefetch" href="/assets/js/9.48aff944.js">
+    <link rel="stylesheet" href="/assets/css/7.styles.142957b4.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/nitrokey_logo_nur_schild_rot.svg" alt="Nitrokey Documentation" class="logo"> <span class="site-name can-hide">Nitrokey Documentation</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Product Menu" class="dropdown-title"><span class="title">Products</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fido2/" class="nav-link">
+  Nitrokey FIDO2
+</a></li><li class="dropdown-item"><!----> <a href="/u2f/" class="nav-link">
+  Nitrokey FIDO U2F
+</a></li><li class="dropdown-item"><!----> <a href="/hsm/" class="nav-link">
+  Nitrokey HSM
+</a></li><li class="dropdown-item"><!----> <a href="/pro/" class="nav-link router-link-active">
+  Nitrokey Pro
+</a></li><li class="dropdown-item"><!----> <a href="/start/" class="nav-link">
+  Nitrokey Start
+</a></li><li class="dropdown-item"><!----> <a href="/storage/" class="nav-link">
+  Nitrokey Storage
+</a></li><li class="dropdown-item"><!----> <a href="/x230/" class="nav-link">
+  NitroPad X230
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">Languages</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pro/windows/openpgp-key-generation-on-device.html" class="nav-link router-link-exact-active router-link-active">
+  English
+</a></li><li class="dropdown-item"><!----> <a href="/de/" class="nav-link">
+  Deutsch
+</a></li></ul></div></div> <a href="https://github.com/Nitrokey/nitrokey-documentation" target="_blank" rel="noopener noreferrer" class="repo-link">
+    Contribute!
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Product Menu" class="dropdown-title"><span class="title">Products</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fido2/" class="nav-link">
+  Nitrokey FIDO2
+</a></li><li class="dropdown-item"><!----> <a href="/u2f/" class="nav-link">
+  Nitrokey FIDO U2F
+</a></li><li class="dropdown-item"><!----> <a href="/hsm/" class="nav-link">
+  Nitrokey HSM
+</a></li><li class="dropdown-item"><!----> <a href="/pro/" class="nav-link router-link-active">
+  Nitrokey Pro
+</a></li><li class="dropdown-item"><!----> <a href="/start/" class="nav-link">
+  Nitrokey Start
+</a></li><li class="dropdown-item"><!----> <a href="/storage/" class="nav-link">
+  Nitrokey Storage
+</a></li><li class="dropdown-item"><!----> <a href="/x230/" class="nav-link">
+  NitroPad X230
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">Languages</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/pro/windows/openpgp-key-generation-on-device.html" class="nav-link router-link-exact-active router-link-active">
+  English
+</a></li><li class="dropdown-item"><!----> <a href="/de/" class="nav-link">
+  Deutsch
+</a></li></ul></div></div> <a href="https://github.com/Nitrokey/nitrokey-documentation" target="_blank" rel="noopener noreferrer" class="repo-link">
+    Contribute!
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><a href="/pro/windows/" class="sidebar-link">Nitrokey Pro 2, Windows</a></li><li><a href="/pro/windows/OpenPGP Email Encryption.html" class="sidebar-link">OpenPGP Email Encryption</a></li><li><a href="/pro/windows/SMIME Email Encryption.html" class="sidebar-link">S/MIME Email Encryption</a></li><li><a href="/pro/windows/two-factor-authentication-microsoft.html" class="sidebar-link">Two-factor Authentication for Microsoft Account</a></li><li><a href="/pro/windows/windows-logon-and-smime-email-encryption-with-active-directory.html" class="sidebar-link">Windows Logon and S/MIME Email Encryption with Active Directory</a></li><li><a href="/pro/windows/2fa-nextcloud.html" class="sidebar-link">Two-factor Authentication for Nextcloud accounts</a></li><li><a href="/pro/windows/openpgp-email-encryption-with-thunderbird.html" class="sidebar-link">OpenPGP Email Encryption With Thunderbird</a></li><li><a href="/pro/windows/openpgp-email-encryption-with-outlook.html" class="sidebar-link">OpenPGP Email Encryption with Outlook</a></li><li><a href="/pro/windows/openpgp-key-generation-on-device.html" class="active sidebar-link">OpenPGP Key Generation On-Device</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/pro/windows/openpgp-key-generation-on-device.html#key-generation" class="sidebar-link">Key Generation</a></li><li class="sidebar-sub-header"><a href="/pro/windows/openpgp-key-generation-on-device.html#change-key-attributes" class="sidebar-link">Change Key Attributes</a></li><li class="sidebar-sub-header"><a href="/pro/windows/openpgp-key-generation-on-device.html#exporting-public-key-and-keyserver-usage" class="sidebar-link">Exporting Public Key and Keyserver Usage</a></li></ul></li><li><a href="/pro/windows/smime-email-encryption-with-thunderbird.html" class="sidebar-link">S/MIME Email Encryption with Thunderbird</a></li><li><a href="/pro/windows/smime-email-encryption-with-outlook.html" class="sidebar-link">S/MIME Email Encryption with Outlook</a></li><li><a href="/pro/windows/login-with-eidauthenticate-on-stand-alone-windows-computers.html" class="sidebar-link">Login With EIDAuthenticate on Stand Alone Windows Computers</a></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="openpgp-key-generation-on-device"><a href="#openpgp-key-generation-on-device" class="header-anchor">#</a> OpenPGP Key Generation On-Device</h1> <p>The following instructions explain the generation of OpenPGP keys directly on the Nitrokey. This is done by using the command line interface of GnuPG. Thus, you need to have GnuPG installed on your system. The newest GnuPG version for Windows can be found <a href="https://www.gpg4win.org/" target="_blank" rel="noopener noreferrer">here<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> and the newest version for MacOS can be found <a href="https://gpgtools.org/" target="_blank" rel="noopener noreferrer">here<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>. Users of Linux systems please install GnuPG with help of the package manager.</p> <div class="custom-block tip"><p class="custom-block-title">Note</p> <p>These instructions are based on GnuPG version 2.2.6 or higher. Some Linux Distributions have an older version installed. In this case please choose a different method as listed <a href="https://www.nitrokey.com/documentation/openpgp-email-encryption" target="_blank" rel="noopener noreferrer">here<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> or install a newer version if possible.</p></div> <h2 id="key-generation"><a href="#key-generation" class="header-anchor">#</a> Key Generation</h2> <p>The following descriptions explain the basic key generation on-device via GnuPG's command line interface. The default behaviour is to generate RSA keys of 2048 bit size. If you want to change the key algorithm and length, have a look at the next section first.</p> <p>Open a command line and type <code>gpg2 --card-edit</code>.</p> <p>To open the Windows command line please push the Windows-key and R-key. Now type 'cmd.exe' in the text field and hit enter. To open a Terminal on macOS or GNU/Linux please use the application search (e.g. spotlight on macOS).</p> <div class="language- extra-class"><pre class="language-text"><code>&gt; gpg2 --card-edit
+ 
+Reader ...........: 20A0:4108:0000320E0000000000000000:0
+Application ID ...: D27600012401020100050000320E0000
+Version ..........: 2.1
+Manufacturer .....: ZeitControl
+Serial number ....: 0000320E
+Name of cardholder: [not set]
+Language prefs ...: de
+Sex ..............: unspecified
+URL of public key : [not set]
+Login data .......: [not set]
+Signature PIN ....: forced
+Key attributes ...: rsa2048 rsa2048 rsa2048
+Max. PIN lengths .: 32 32 32
+PIN retry counter : 3 0 3
+Signature counter : 0
+Signature key ....: [none]
+Encryption key....: [none]
+Authentication key: [none]
+General key info..: [none]
+ 
+gpg/card&gt;
+</code></pre></div><p>Now you are in the interactive interface of GnuPG. Activate the admin commands with <code>admin</code> and use <code>generate</code> afterwards to start the generation of keys.</p> <div class="language- extra-class"><pre class="language-text"><code>gpg/card&gt; admin                                                                                          
+Admin commands are allowed                                                                               
+ 
+gpg/card&gt; generate                                                                                       
+Make off-card backup of encryption key? (Y/n) n                                                          
+ 
+Please note that the factory settings of the PINs are                                                    
+   PIN = '123456'     Admin PIN = '12345678'                                                             
+You should change them using the command --change-pin                                                    
+ 
+Please specify how long the key should be valid.                                                         
+         0 = key does not expire                                                                         
+      &lt;n&gt;  = key expires in n days                                                                       
+      &lt;n&gt;w = key expires in n weeks                                                                      
+      &lt;n&gt;m = key expires in n months                                                                     
+      &lt;n&gt;y = key expires in n years                                                                      
+Key is valid for? (0)                                                                                    
+Key does not expire at all                                                                               
+Is this correct? (y/N) y                                                                                 
+ 
+GnuPG needs to construct a user ID to identify your key.                                                 
+ 
+Real name: Jane Doe                                                                                      
+Email address: jane@example.com                                                                              
+Comment:                                                                                                 
+You selected this USER-ID:                                                                               
+&quot;Jane Doe &lt;jane@doecom&gt;&quot;                                                                            
+ 
+Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit? O                                                    
+gpg: key 817E149CA002B92F marked as ultimately trusted                                                   
+gpg: revocation certificate stored as '/home/nitrokey//.gnupg/openpgp-revocs.d/E62F445E8BB4B5085C031F5381
+7E149CA002B92F.rev'                                                                                      
+public and secret key created and signed.                                                                
+ 
+ 
+gpg/card&gt;
+&lt;/jane@doe.com&gt;&lt;/n&gt;&lt;/n&gt;&lt;/n&gt;&lt;/n&gt;
+</code></pre></div><p><strong>Please do not create the suggested off-card backup.</strong> This &quot;backup&quot; does only save the encryption key, but not the signature and authentication keys. In case of a loss of the device, you will not be able to restore the whole key set. So on the one hand it is no full backup (use <a href="https://www.nitrokey.com/documentation/openpgp-create-backup" target="_blank" rel="noopener noreferrer">these instructions<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> instead, if you need one) and on the other hand you risk that someone else can get in possession of your encryption key. The advantage of generating keys on-device is to make sure that keys are stored securely. Therefore, we recommend to skip this half-backup.</p> <p>Now you have a complete key set on your device which can be used for the <a href="https://www.nitrokey.com/documentation/applications" target="_blank" rel="noopener noreferrer">various applications<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> listed on our site. Type <code>quit</code> and hit enter to exit.</p> <h2 id="change-key-attributes"><a href="#change-key-attributes" class="header-anchor">#</a> Change Key Attributes</h2> <p>This section is about changing the key attributes. If you want to use the default values, you can proceed with the next section.</p> <p>Open a command line and type <code>gpg2 --card-edit --expert</code>.</p> <div class="language- extra-class"><pre class="language-text"><code>&gt; gpg2 --card-edit --expert
+ 
+Reader ...........: 20A0:4108:0000320E0000000000000000:0
+Application ID ...: D27600012401020100050000320E0000
+Version ..........: 2.1
+Manufacturer .....: ZeitControl
+Serial number ....: 0000320E
+Name of cardholder: [not set]
+Language prefs ...: de
+Sex ..............: unspecified
+URL of public key : [not set]
+Login data .......: [not set]
+Signature PIN ....: forced
+Key attributes ...: rsa2048 rsa2048 rsa2048
+Max. PIN lengths .: 32 32 32
+PIN retry counter : 3 0 3
+Signature counter : 0
+Signature key ....: [none]
+Encryption key....: [none]
+Authentication key: [none]
+General key info..: [none]
+</code></pre></div><p>Now you are in the interactive interface of GnuPG. As you can see in the &quot;Key attributes&quot; field above, the default value rsa2048 is set. To change them, activate the admin commands with <code>admin</code> and use <code>key-attr</code> afterwards to change the attributes of the keys.</p> <div class="language- extra-class"><pre class="language-text"><code>gpg/card&gt; admin
+Admin commands are allowed
+ 
+gpg/card&gt; key-attr
+Changing card key attribute for: Signature key
+Please select what kind of key you want:
+&amp;nbsp;&amp;nbsp; (1) RSA
+&amp;nbsp;&amp;nbsp; (2) ECC
+Your selection? 1
+What keysize do you want? (2048) 4096
+The card will now be re-configured to generate a key of 4096 bits
+Changing card key attribute for: Encryption key
+Please select what kind of key you want:
+&amp;nbsp;&amp;nbsp; (1) RSA
+&amp;nbsp;&amp;nbsp; (2) ECC
+Your selection? 1
+What keysize do you want? (2048) 4096
+The card will now be re-configured to generate a key of 4096 bits
+Changing card key attribute for: Authentication key
+Please select what kind of key you want:
+&amp;nbsp;&amp;nbsp; (1) RSA
+&amp;nbsp;&amp;nbsp; (2) ECC
+Your selection? 1
+What keysize do you want? (2048) 4096
+The card will now be re-configured to generate a key of 4096 bits
+</code></pre></div><p>You can choose the attribute for each key (that is, signature, encryption and authentication key). Most people will use the same attributes for every key. Type <code>list</code> to see the results (have look at the &quot;Key attributes&quot; field, which now reads rsa4096).</p> <div class="language- extra-class"><pre class="language-text"><code>gpg/card&gt; list
+ 
+Reader ...........: 20A0:4108:0000320E0000000000000000:0
+Application ID ...: D27600012401020100050000320E0000
+Version ..........: 2.1
+Manufacturer .....: ZeitControl
+Serial number ....: 0000320E
+Name of cardholder: [not set]
+Language prefs ...: de
+Sex ..............: unspecified
+URL of public key : [not set]
+Login data .......: [not set]
+Signature PIN ....: forced
+Key attributes ...: rsa4096 rsa4096 rsa4096
+Max. PIN lengths .: 32 32 32
+PIN retry counter : 3 0 3
+Signature counter : 0
+Signature key ....: [none]
+Encryption key....: [none]
+Authentication key: [none]
+General key info..: [none]
+</code></pre></div><p>Type <code>quit</code> and hit enter to exit or proceed directly with the previous section to actually generate the keys with the key attributes you just set.</p> <p>The following table illustrates which algorithm can be used on which device.</p> <table><thead><tr><th style="text-align:right;"></th> <th style="text-align:center;">Start</th> <th style="text-align:right;">Pro + Storage</th> <th style="text-align:right;">Pro 2 + Storage 2</th></tr></thead> <tbody><tr><td style="text-align:right;">rsa1024</td> <td style="text-align:center;">✓</td> <td style="text-align:right;">✓</td> <td style="text-align:right;"></td></tr> <tr><td style="text-align:right;">rsa2048</td> <td style="text-align:center;">✓</td> <td style="text-align:right;">✓</td> <td style="text-align:right;">✓</td></tr> <tr><td style="text-align:right;">rsa3072</td> <td style="text-align:center;"></td> <td style="text-align:right;">✓</td> <td style="text-align:right;">✓</td></tr> <tr><td style="text-align:right;">rsa4096</td> <td style="text-align:center;"></td> <td style="text-align:right;">✓</td> <td style="text-align:right;">✓</td></tr> <tr><td style="text-align:right;">curve25519 (ECC)</td> <td style="text-align:center;">✓</td> <td style="text-align:right;"></td> <td style="text-align:right;"></td></tr> <tr><td style="text-align:right;">NIST (ECC)</td> <td style="text-align:center;">✓</td> <td style="text-align:right;"></td> <td style="text-align:right;">✓</td></tr> <tr><td style="text-align:right;">Brainpool (ECC)</td> <td style="text-align:center;"></td> <td style="text-align:right;"></td> <td style="text-align:right;">✓</td></tr> <tr><td style="text-align:right;">secp256k1</td> <td style="text-align:center;">✓</td> <td style="text-align:right;"></td> <td style="text-align:right;"></td></tr></tbody></table> <h2 id="exporting-public-key-and-keyserver-usage"><a href="#exporting-public-key-and-keyserver-usage" class="header-anchor">#</a> Exporting Public Key and Keyserver Usage</h2> <p>Although you can start to use your Nitrokey right away after generating the keys on your system, you need to import your public key on every system, you want to use the Nitrokey on. So to be prepared you have two options: You either save the public key anywhere you like and use it on another system or you save the public key on a webpage/keyserver.</p> <h3 id="generating-a-public-key-file"><a href="#generating-a-public-key-file" class="header-anchor">#</a> Generating a Public Key File</h3> <p>To get a simple file of your public key, you can just use <code>gpg2 --armor --export keyID &gt; pubkey.asc</code>. Use either the fingerprint as &quot;keyID&quot; (look at <code>gpg -K</code> to get it) or just use your email address as an identifier.</p> <p>You can carry this file with you or send it to anyone who you like. This file is not secret at all. If you want to use the Nitrokey on another system, you first import this public key via <code>gpg2 --import pubkey.asc</code> and then types <code>gpg2 --card-status</code> so that the system knows where to look for this key. That's all.</p> <h3 id="uploading-the-public-key"><a href="#uploading-the-public-key" class="header-anchor">#</a> Uploading the Public Key</h3> <p>If you do not want to carry a public keyfile with you, you can upload it to keyserver. You can do this by typing <code>gpg --keyserver search.keyserver.net --send-key keyID</code>. If you are using another machine you can just import it by using <code>gpg --keyserver search.keyserver.net --recv-key keyID</code>.</p> <p>Another possibility is to change the URL setting on your card. Start gpg --card-edit again and first set the URL where the key is situated (e.g. on the keyserver or on your webpage etc.) via the <code>url</code> command. From now on you can import the key on another system by just using the <code>fetch</code> command within the <code>gpg --card-edit</code> environment.</p></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/Nitrokey/nitrokey-documentation/edit/master/pro/windows/openpgp-key-generation-on-device.md" target="_blank" rel="noopener noreferrer">Help us improve this page!</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">8/14/2020, 11:39:21 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/pro/windows/openpgp-email-encryption-with-outlook.html" class="prev">
+        OpenPGP Email Encryption with Outlook
+      </a></span> <span class="next"><a href="/pro/windows/smime-email-encryption-with-thunderbird.html">
+        S/MIME Email Encryption with Thunderbird
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.7b848162.js" defer></script><script src="/assets/js/23.8b709f46.js" defer></script><script src="/assets/js/17.ff412cb2.js" defer></script>
+  </body>
+</html>
