@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="English">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Creating a Certificate Authority | Nitrokey Documentation</title>
+    <meta name="generator" content="VuePress 1.4.1">
+    <link rel="icon" href="/favicon.png">
+    <meta name="description" content="User documentation of all Nitrokey products">
+    <link rel="preload" href="/assets/css/9.styles.6851e6bc.css" as="style"><link rel="preload" href="/assets/js/app.979202d4.js" as="script"><link rel="preload" href="/assets/js/30.70da4933.js" as="script"><link rel="preload" href="/assets/js/10.ac6fee3f.js" as="script"><link rel="prefetch" href="/assets/js/0.153d6d20.js"><link rel="prefetch" href="/assets/js/1.6f529f25.js"><link rel="prefetch" href="/assets/js/11.f33fe6a2.js"><link rel="prefetch" href="/assets/js/12.eaa50f25.js"><link rel="prefetch" href="/assets/js/13.2a7ce191.js"><link rel="prefetch" href="/assets/js/14.33353c5b.js"><link rel="prefetch" href="/assets/js/15.0b032547.js"><link rel="prefetch" href="/assets/js/16.15d0b979.js"><link rel="prefetch" href="/assets/js/17.5f431d05.js"><link rel="prefetch" href="/assets/js/18.97c86593.js"><link rel="prefetch" href="/assets/js/19.2a8e64e6.js"><link rel="prefetch" href="/assets/js/2.0a5787e7.js"><link rel="prefetch" href="/assets/js/20.2c505f3d.js"><link rel="prefetch" href="/assets/js/21.b5c5a36a.js"><link rel="prefetch" href="/assets/js/22.b9a7c326.js"><link rel="prefetch" href="/assets/js/23.5af2d246.js"><link rel="prefetch" href="/assets/js/24.4bc4c14c.js"><link rel="prefetch" href="/assets/js/25.ddc8321b.js"><link rel="prefetch" href="/assets/js/26.28b93bba.js"><link rel="prefetch" href="/assets/js/27.b97a7924.js"><link rel="prefetch" href="/assets/js/28.8f3fbad7.js"><link rel="prefetch" href="/assets/js/3.9f9de3db.js"><link rel="prefetch" href="/assets/js/31.ca9f8f7e.js"><link rel="prefetch" href="/assets/js/32.3eabaedb.js"><link rel="prefetch" href="/assets/js/33.7abf6bb4.js"><link rel="prefetch" href="/assets/js/34.3f7b9b3c.js"><link rel="prefetch" href="/assets/js/35.2e6d61d6.js"><link rel="prefetch" href="/assets/js/36.7c997331.js"><link rel="prefetch" href="/assets/js/37.20bea1a9.js"><link rel="prefetch" href="/assets/js/38.bb3b0a32.js"><link rel="prefetch" href="/assets/js/39.65e4c685.js"><link rel="prefetch" href="/assets/js/4.ccec6821.js"><link rel="prefetch" href="/assets/js/40.4677dcad.js"><link rel="prefetch" href="/assets/js/41.7cbf3643.js"><link rel="prefetch" href="/assets/js/42.4a2134fb.js"><link rel="prefetch" href="/assets/js/43.4bbe59ef.js"><link rel="prefetch" href="/assets/js/44.fef82cfb.js"><link rel="prefetch" href="/assets/js/45.9a5830bb.js"><link rel="prefetch" href="/assets/js/46.0bd60689.js"><link rel="prefetch" href="/assets/js/47.e285abf7.js"><link rel="prefetch" href="/assets/js/48.97be9c49.js"><link rel="prefetch" href="/assets/js/49.54d83436.js"><link rel="prefetch" href="/assets/js/5.011fd8d5.js"><link rel="prefetch" href="/assets/js/50.20851962.js"><link rel="prefetch" href="/assets/js/51.d9f0f2e7.js"><link rel="prefetch" href="/assets/js/52.3b5830ca.js"><link rel="prefetch" href="/assets/js/53.97f4eabb.js"><link rel="prefetch" href="/assets/js/54.b3feb13f.js"><link rel="prefetch" href="/assets/js/55.0eaadd7b.js"><link rel="prefetch" href="/assets/js/56.f72b943c.js"><link rel="prefetch" href="/assets/js/57.0090a454.js"><link rel="prefetch" href="/assets/js/58.e58d5163.js"><link rel="prefetch" href="/assets/js/59.039fff2f.js"><link rel="prefetch" href="/assets/js/6.99438b68.js"><link rel="prefetch" href="/assets/js/60.146d4dfe.js"><link rel="prefetch" href="/assets/js/61.c2613029.js"><link rel="prefetch" href="/assets/js/62.1506b199.js"><link rel="prefetch" href="/assets/js/63.159d9547.js"><link rel="prefetch" href="/assets/js/64.8fac0554.js"><link rel="prefetch" href="/assets/js/65.6ff69694.js"><link rel="prefetch" href="/assets/js/66.00783ecd.js"><link rel="prefetch" href="/assets/js/67.c1f3999d.js"><link rel="prefetch" href="/assets/js/68.e1d2b61c.js"><link rel="prefetch" href="/assets/js/69.fbbb59aa.js"><link rel="prefetch" href="/assets/js/7.ff966dcd.js"><link rel="prefetch" href="/assets/js/70.a897d5bf.js"><link rel="prefetch" href="/assets/js/71.aa602931.js"><link rel="prefetch" href="/assets/js/72.fe486605.js"><link rel="prefetch" href="/assets/js/73.1d31aaec.js"><link rel="prefetch" href="/assets/js/74.d97f0935.js"><link rel="prefetch" href="/assets/js/75.e567cc62.js"><link rel="prefetch" href="/assets/js/76.9176d576.js"><link rel="prefetch" href="/assets/js/77.644e4dfe.js"><link rel="prefetch" href="/assets/js/8.77691cfb.js">
+    <link rel="stylesheet" href="/assets/css/9.styles.6851e6bc.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/nitrokey_logo_nur_schild_rot.svg" alt="Nitrokey Documentation" class="logo"> <span class="site-name can-hide">Nitrokey Documentation</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Product Menu" class="dropdown-title"><span class="title">Products</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fido2/" class="nav-link">
+  Nitrokey FIDO2
+</a></li><li class="dropdown-item"><!----> <a href="/u2f/" class="nav-link">
+  Nitrokey FIDO U2F
+</a></li><li class="dropdown-item"><!----> <a href="/hsm/" class="nav-link router-link-active">
+  Nitrokey HSM
+</a></li><li class="dropdown-item"><!----> <a href="/pro/" class="nav-link">
+  Nitrokey Pro
+</a></li><li class="dropdown-item"><!----> <a href="/start/" class="nav-link">
+  Nitrokey Start
+</a></li><li class="dropdown-item"><!----> <a href="/storage/" class="nav-link">
+  Nitrokey Storage
+</a></li><li class="dropdown-item"><!----> <a href="/x230/" class="nav-link">
+  NitroPad X230
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">Languages</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/hsm/mac/creating-certificate-authority.html" class="nav-link router-link-exact-active router-link-active">
+  English
+</a></li><li class="dropdown-item"><!----> <a href="/de/" class="nav-link">
+  Deutsch
+</a></li></ul></div></div> <a href="https://github.com/Nitrokey/nitrokey-documentation" target="_blank" rel="noopener noreferrer" class="repo-link">
+    Contribute!
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/" class="nav-link">
+  Home
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Product Menu" class="dropdown-title"><span class="title">Products</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/fido2/" class="nav-link">
+  Nitrokey FIDO2
+</a></li><li class="dropdown-item"><!----> <a href="/u2f/" class="nav-link">
+  Nitrokey FIDO U2F
+</a></li><li class="dropdown-item"><!----> <a href="/hsm/" class="nav-link router-link-active">
+  Nitrokey HSM
+</a></li><li class="dropdown-item"><!----> <a href="/pro/" class="nav-link">
+  Nitrokey Pro
+</a></li><li class="dropdown-item"><!----> <a href="/start/" class="nav-link">
+  Nitrokey Start
+</a></li><li class="dropdown-item"><!----> <a href="/storage/" class="nav-link">
+  Nitrokey Storage
+</a></li><li class="dropdown-item"><!----> <a href="/x230/" class="nav-link">
+  NitroPad X230
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">Languages</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/hsm/mac/creating-certificate-authority.html" class="nav-link router-link-exact-active router-link-active">
+  English
+</a></li><li class="dropdown-item"><!----> <a href="/de/" class="nav-link">
+  Deutsch
+</a></li></ul></div></div> <a href="https://github.com/Nitrokey/nitrokey-documentation" target="_blank" rel="noopener noreferrer" class="repo-link">
+    Contribute!
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></nav>  <ul class="sidebar-links"><li><a href="/hsm/mac/" class="sidebar-link">Nitrokey HSM, macOS</a></li><li><a href="/hsm/mac/programming-the-nitrokey.html" class="sidebar-link">Programming the Nitrokey</a></li><li><a href="/hsm/mac/login-to-windows-domain-computers-with-ms-active-directory.html" class="sidebar-link">Login to Windows Domain Computers With MS Active Directory</a></li><li><a href="/hsm/mac/creating-certificate-authority.html" class="active sidebar-link">Creating a Certificate Authority</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/hsm/mac/creating-certificate-authority.html#choose-cryptographic-algorithms" class="sidebar-link">Choose Cryptographic Algorithms</a></li><li class="sidebar-sub-header"><a href="/hsm/mac/creating-certificate-authority.html#preparing-to-start" class="sidebar-link">Preparing to Start</a></li><li class="sidebar-sub-header"><a href="/hsm/mac/creating-certificate-authority.html#creating-the-root-certificate-authority" class="sidebar-link">Creating the Root Certificate Authority</a></li><li class="sidebar-sub-header"><a href="/hsm/mac/creating-certificate-authority.html#creating-the-intermediate-certificate-authority" class="sidebar-link">Creating the Intermediate Certificate Authority</a></li><li class="sidebar-sub-header"><a href="/hsm/mac/creating-certificate-authority.html#sign-a-server-certificate" class="sidebar-link">Sign a Server Certificate</a></li><li class="sidebar-sub-header"><a href="/hsm/mac/creating-certificate-authority.html#references" class="sidebar-link">References</a></li></ul></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="creating-a-certificate-authority"><a href="#creating-a-certificate-authority" class="header-anchor">#</a> Creating a Certificate Authority</h1> <p>This article shows you how to setup your own private certificate authority backed by a Nitrokey HSM. This certificate authority has no automation and does not really scale. Other open source projects can be referenced for automation and scalability.</p> <h2 id="choose-cryptographic-algorithms"><a href="#choose-cryptographic-algorithms" class="header-anchor">#</a> Choose Cryptographic Algorithms</h2> <p>I'm going to assume that you're as paranoid as I am, so I will be using the following command for generating private keys:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>pkcs11-tool -l --keypairgen --key-type EC:secp384r1 --label root
+</code></pre></div><p>But, if you're less paranoid that I am, you can safely choose the following options:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>pkcs11-tool -l --keypairgen --key-type EC:secp256r1 --label root
+pkcs11-tool -l --keypairgen --key-type rsa:4096 --label root
+</code></pre></div><p>Likewise, I will be using the sha512 algorithm throughout this article, but sha256 can safely be used.</p> <h2 id="preparing-to-start"><a href="#preparing-to-start" class="header-anchor">#</a> Preparing to Start</h2> <p>To start with, you need to pick a directory to store your CA.</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token assign-left variable">pki_dir</span><span class="token operator">=</span>/opt/certificate-authority
+<span class="token function">mkdir</span> <span class="token variable">$pki_dir</span>
+<span class="token builtin class-name">cd</span> <span class="token variable">$pki_dir</span>
+<span class="token function">mkdir</span> certs config crl newcerts intermediate intermediate/certs intermediate/crl intermediate/csr intermediate/newcerts
+<span class="token function">touch</span> index.txt intermediate/index.txt
+<span class="token builtin class-name">cd</span> config
+</code></pre></div><p>Install the necessary tools:</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># Arch Linux</span>
+pacman -S community/opensc community/libp11
+
+<span class="token comment"># Ubunutu</span>
+<span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> opensc gnutls_bin
+</code></pre></div><h2 id="creating-the-root-certificate-authority"><a href="#creating-the-root-certificate-authority" class="header-anchor">#</a> Creating the Root Certificate Authority</h2> <p>We start by generating the private key for the certificate authority directly on the Nitrokey HSM. This allows us to use the private key in the future, but not access it.</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># Generate private key on HSM</span>
+$ pkcs11-tool -l --keypairgen --key-type EC:secp384r1 --label root
+Using slot <span class="token number">0</span> with a present token <span class="token punctuation">(</span>0x0<span class="token punctuation">)</span>
+Logging <span class="token keyword">in</span> to <span class="token string">&quot;SmartCard-HSM (UserPIN)&quot;</span><span class="token builtin class-name">.</span>
+Please enter User PIN:
+Key pair generated:
+Private Key Object<span class="token punctuation">;</span> EC
+  label:      root
+  ID:         e0161cc8b6f5d66ac6835ecdecb623fc0506a675
+  Usage:      sign, derive
+  Access:     none
+Public Key Object<span class="token punctuation">;</span> EC  EC_POINT <span class="token number">384</span> bits
+  EC_POINT:   046104c1e7b40e1ef9e5d47399aeeda695026c9eb626462059eb696e8f2b647b42d64ac3b7fc7a5b31aa3edf9bce46b2cdcf8e5d190b13601d3d14ffb119c8cf60033c6b78ba579b85113ca536eef1cf85ba418ff0110a56ec881b329e0562e090a3e7
+  EC_PARAMS:  06052b81040022
+  label:      root
+  ID:         e0161cc8b6f5d66ac6835ecdecb623fc0506a675
+  Usage:      verify, derive
+  Access:     none
+</code></pre></div><p>Note the ID number (e0161cc8b6f5d66ac6835ecdecb623fc0506a675), we'll need it later.</p> <p>If you need the ID in the future, you can list the keys on the Nitrokey HSM:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>pkcs11-tool -O
+</code></pre></div><p>We need to create a config file to generate a self-signed public certificate.</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">vim</span> create_root_cert.ini
+</code></pre></div><p>Fill out the request information in &lt;angle brackets&gt; with information for your CA.</p> <div class="language-ini extra-class"><pre class="language-ini"><code><span class="token selector">[ ca ]</span>
+<span class="token comment"># `man ca`</span>
+<span class="token constant">default_ca</span> <span class="token attr-value"><span class="token punctuation">=</span> CA_default</span>
+
+<span class="token selector">[ CA_default ]</span>
+<span class="token comment"># Directory and file locations.</span>
+<span class="token constant">dir</span>               <span class="token attr-value"><span class="token punctuation">=</span> /opt/certificate-authority</span>
+<span class="token constant">certs</span>             <span class="token attr-value"><span class="token punctuation">=</span> $dir/certs</span>
+<span class="token constant">crl_dir</span>           <span class="token attr-value"><span class="token punctuation">=</span> $dir/crl</span>
+<span class="token constant">new_certs_dir</span>     <span class="token attr-value"><span class="token punctuation">=</span> $dir/newcerts</span>
+<span class="token constant">database</span>          <span class="token attr-value"><span class="token punctuation">=</span> $dir/index.txt</span>
+<span class="token constant">serial</span>            <span class="token attr-value"><span class="token punctuation">=</span> $dir/serial</span>
+
+<span class="token comment"># SHA-1 is deprecated, so use SHA-2 instead.</span>
+<span class="token constant">default_md</span>        <span class="token attr-value"><span class="token punctuation">=</span> sha512</span>
+
+<span class="token constant">name_opt</span>          <span class="token attr-value"><span class="token punctuation">=</span> ca_default</span>
+<span class="token constant">cert_opt</span>          <span class="token attr-value"><span class="token punctuation">=</span> ca_default</span>
+<span class="token constant">default_days</span>      <span class="token attr-value"><span class="token punctuation">=</span> 375</span>
+<span class="token constant">preserve</span>          <span class="token attr-value"><span class="token punctuation">=</span> no</span>
+<span class="token constant">policy</span>            <span class="token attr-value"><span class="token punctuation">=</span> policy_strict</span>
+
+<span class="token selector">[ policy_strict ]</span>
+<span class="token comment"># The root CA should only sign intermediate certificates that match.</span>
+<span class="token comment"># See the POLICY FORMAT section of `man ca`.</span>
+<span class="token constant">countryName</span>             <span class="token attr-value"><span class="token punctuation">=</span> match</span>
+<span class="token constant">stateOrProvinceName</span>     <span class="token attr-value"><span class="token punctuation">=</span> match</span>
+<span class="token constant">organizationName</span>        <span class="token attr-value"><span class="token punctuation">=</span> match</span>
+<span class="token constant">organizationalUnitName</span>  <span class="token attr-value"><span class="token punctuation">=</span> optional</span>
+<span class="token constant">commonName</span>              <span class="token attr-value"><span class="token punctuation">=</span> supplied</span>
+<span class="token constant">emailAddress</span>            <span class="token attr-value"><span class="token punctuation">=</span> optional</span>
+
+<span class="token selector">[ req ]</span>
+<span class="token comment"># Options for the `req` tool (`man req`).</span>
+<span class="token constant">default_bits</span>        <span class="token attr-value"><span class="token punctuation">=</span> 4096</span>
+<span class="token constant">distinguished_name</span>  <span class="token attr-value"><span class="token punctuation">=</span> req_distinguished_name</span>
+<span class="token constant">string_mask</span>         <span class="token attr-value"><span class="token punctuation">=</span> utf8only</span>
+<span class="token constant">prompt</span>              <span class="token attr-value"><span class="token punctuation">=</span> no</span>
+
+<span class="token comment"># SHA-1 is deprecated, so use SHA-2 instead.</span>
+<span class="token constant">default_md</span>          <span class="token attr-value"><span class="token punctuation">=</span> sha512</span>
+
+<span class="token selector">[ req_distinguished_name ]</span>
+<span class="token constant">C</span>                   <span class="token attr-value"><span class="token punctuation">=</span> &lt;two lettter country&gt;</span>
+<span class="token constant">ST</span>                  <span class="token attr-value"><span class="token punctuation">=</span> &lt;full state name&gt;</span>
+<span class="token constant">O</span>                   <span class="token attr-value"><span class="token punctuation">=</span> &lt;your company&gt;</span>
+<span class="token constant">OU</span>                  <span class="token attr-value"><span class="token punctuation">=</span> &lt;your company&gt; Certificate Authority</span>
+<span class="token constant">CN</span>                  <span class="token attr-value"><span class="token punctuation">=</span> &lt;your company&gt; Root CA</span>
+
+<span class="token selector">[ v3_ca ]</span>
+<span class="token comment"># Extensions for a typical CA (`man x509v3_config`).</span>
+<span class="token constant">subjectKeyIdentifier</span> <span class="token attr-value"><span class="token punctuation">=</span> hash</span>
+<span class="token constant">authorityKeyIdentifier</span> <span class="token attr-value"><span class="token punctuation">=</span> keyid:always,issuer</span>
+<span class="token constant">basicConstraints</span> <span class="token attr-value"><span class="token punctuation">=</span> critical, CA:true</span>
+<span class="token constant">keyUsage</span> <span class="token attr-value"><span class="token punctuation">=</span> critical, digitalSignature, cRLSign, keyCertSign</span>
+</code></pre></div><p>Generate the self-signed public certificate from the private key. Use the private key id value from earlier.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ openssl req -config create_root_cert.ini -engine pkcs11 -keyform engine -key e0161cc8b6f5d66ac6835ecdecb623fc0506a675 -new -x509 -days <span class="token number">3650</span> -sha512 -extensions v3_ca -out <span class="token punctuation">..</span>/certs/root.crt
+engine <span class="token string">&quot;pkcs11&quot;</span> set.
+Enter PKCS<span class="token comment">#11 token PIN for SmartCard-HSM (UserPIN):</span>
+</code></pre></div><p>Verify that the root certificate was generated correctly. Verify that Signature-Algorithm matches above and below. Verify that Issuer and Subject match, all root certificates are self signed. Verify that Key Usage matches what was in the v3_ca information in our config file.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ openssl x509 -noout -text -in <span class="token punctuation">..</span>/certs/root.crt
+Certificate:
+    Data:
+        Version: <span class="token number">3</span> <span class="token punctuation">(</span>0x2<span class="token punctuation">)</span>
+        Serial Number:
+            <span class="token number">25</span>:ac:e1:36:75:67:26:1d:bb:96:4b:84:c2:2d:83:25:7b:cc:e0:e5
+        Signature Algorithm: ecdsa-with-SHA512
+        Issuer: C <span class="token operator">=</span> US, ST <span class="token operator">=</span> My State, O <span class="token operator">=</span> My Company, OU <span class="token operator">=</span> My Company Certificate Authority, CN <span class="token operator">=</span> My Company Root CA
+        Validity
+            Not Before: Aug <span class="token number">18</span> <span class="token number">20</span>:13:20 <span class="token number">2020</span> GMT
+            Not After <span class="token builtin class-name">:</span> Aug <span class="token number">16</span> <span class="token number">20</span>:13:20 <span class="token number">2030</span> GMT
+        Subject: C <span class="token operator">=</span> US, ST <span class="token operator">=</span> My State, O <span class="token operator">=</span> My Company, OU <span class="token operator">=</span> My Company Certificate Authority, CN <span class="token operator">=</span> My Company Root CA
+        Subject Public Key Info:
+            Public Key Algorithm: id-ecPublicKey
+                Public-Key: <span class="token punctuation">(</span><span class="token number">384</span> bit<span class="token punctuation">)</span>
+                pub:
+                    04:c1:e7:b4:0e:1e:f9:e5:d4:73:99:ae:ed:a6:95:
+                    02:6c:9e:b6:26:46:20:59:eb:69:6e:8f:2b:64:7b:
+                    <span class="token number">42</span>:d6:4a:c3:b7:fc:7a:5b:31:aa:3e:df:9b:ce:46:
+                    b2:cd:cf:8e:5d:19:0b:13:60:1d:3d:14:ff:b1:19:
+                    c8:cf:60:03:3c:6b:78:ba:57:9b:85:11:3c:a5:36:
+                    ee:f1:cf:85:ba:41:8f:f0:11:0a:56:ec:88:1b:32:
+                    9e:05:62:e0:90:a3:e7
+                ASN1 OID: secp384r1
+                NIST CURVE: P-384
+        X509v3 extensions:
+            X509v3 Subject Key Identifier:
+                F1:FA:61:75:0B:AC:3C:95:97:EF:73:3C:3F:38:22:B1:DB:D9:BF:41
+            X509v3 Authority Key Identifier:
+                keyid:F1:FA:61:75:0B:AC:3C:95:97:EF:73:3C:3F:38:22:B1:DB:D9:BF:41
+
+            X509v3 Basic Constraints: critical
+                CA:TRUE
+            X509v3 Key Usage: critical
+                Digital Signature, Certificate Sign, CRL Sign
+    Signature Algorithm: ecdsa-with-SHA512
+         <span class="token number">30</span>:64:02:30:53:b8:b6:5a:41:4b:4f:6a:d1:a6:76:88:df:13:
+         d6:da:c7:48:aa:8b:aa:ff:13:6c:d1:00:53:90:92:b5:71:57:
+         eb:d0:bf:3e:5d:2e:62:c0:3e:40:0f:64:25:a5:92:0f:02:30:
+         <span class="token number">15</span>:0a:19:d5:a2:09:86:d8:9d:07:67:71:c3:84:f2:6b:90:20:
+         2d:29:10:9e:4c:73:7a:55:56:4b:dc:fe:8d:3f:f0:9c:20:e1:
+         5a:74:fb:41:86:ad:a4:66:61:74:d7:fd
+</code></pre></div><h2 id="creating-the-intermediate-certificate-authority"><a href="#creating-the-intermediate-certificate-authority" class="header-anchor">#</a> Creating the Intermediate Certificate Authority</h2> <p>We continue by generating the private key for the intermediate certificate authority directly on the Nitrokey HSM. This allows us to use the private key in the future, but not access it.</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token comment"># Generate private key on HSM</span>
+$ pkcs11-tool -l --keypairgen --key-type EC:secp384r1 --label intermediate
+Using slot <span class="token number">0</span> with a present token <span class="token punctuation">(</span>0x0<span class="token punctuation">)</span>
+Logging <span class="token keyword">in</span> to <span class="token string">&quot;SmartCard-HSM (UserPIN)&quot;</span><span class="token builtin class-name">.</span>
+Please enter User PIN:
+Key pair generated:
+Private Key Object<span class="token punctuation">;</span> EC
+  label:      intermediate
+  ID:         bcb48fe9b566ae61891aabbfde6a23d4ff3ab639
+  Usage:      sign, derive
+  Access:     none
+Public Key Object<span class="token punctuation">;</span> EC  EC_POINT <span class="token number">384</span> bits
+  EC_POINT:   046104d0fb5c0cd10c0b6e4d0f6986755824b624ec9fcd8ff9ae5f0109fe6ff3ad887ca760717da894f3ff84dc8c24fe8c93b0cd840a6aa941bb2866c061cef60e47b893d71852b50d6762af10c951426e55ec8925a6cd83aeae1730311108afdbcdee
+  EC_PARAMS:  06052b81040022
+  label:      intermediate
+  ID:         bcb48fe9b566ae61891aabbfde6a23d4ff3ab639
+  Usage:      verify, derive
+  Access:     none
+</code></pre></div><p>Note the ID number (bcb48fe9b566ae61891aabbfde6a23d4ff3ab639), we'll need it later.</p> <p>If you need the ID in the future, you can list the keys on the Nitrokey HSM:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>pkcs11-tool -O
+</code></pre></div><p>We need to create a config file to generate a self-signed public certificate.</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">vim</span> create_intermediate_csr.ini
+</code></pre></div><p>Fill out the request information in &lt;angle brackets&gt; with information for your CA.</p> <div class="language-ini extra-class"><pre class="language-ini"><code><span class="token selector">[ req ]</span>
+<span class="token comment"># Options for the `req` tool (`man req`).</span>
+<span class="token constant">default_bits</span>        <span class="token attr-value"><span class="token punctuation">=</span> 4096</span>
+<span class="token constant">distinguished_name</span>  <span class="token attr-value"><span class="token punctuation">=</span> req_distinguished_name</span>
+<span class="token constant">string_mask</span>         <span class="token attr-value"><span class="token punctuation">=</span> utf8only</span>
+<span class="token constant">prompt</span>              <span class="token attr-value"><span class="token punctuation">=</span> no</span>
+
+<span class="token comment"># SHA-1 is deprecated, so use SHA-2 instead.</span>
+<span class="token selector">[ v3_ca ]</span>
+<span class="token comment"># Extensions for a typical CA (`man x509v3_config`).</span>
+<span class="token constant">subjectKeyIdentifier</span> <span class="token attr-value"><span class="token punctuation">=</span> hash</span>
+<span class="token constant">authorityKeyIdentifier</span> <span class="token attr-value"><span class="token punctuation">=</span> keyid:always,issuer</span>
+<span class="token constant">basicConstraints</span> <span class="token attr-value"><span class="token punctuation">=</span> critical, CA:true</span>
+<span class="token constant">keyUsage</span> <span class="token attr-value"><span class="token punctuation">=</span> critical, digitalSignature, cRLSign, keyCertSign</span>
+<span class="token constant">default_md</span>          <span class="token attr-value"><span class="token punctuation">=</span> sha512</span>
+
+<span class="token selector">[ req_distinguished_name ]</span>
+<span class="token constant">C</span>                   <span class="token attr-value"><span class="token punctuation">=</span> &lt;two lettter country&gt;</span>
+<span class="token constant">ST</span>                  <span class="token attr-value"><span class="token punctuation">=</span> &lt;full state name&gt;</span>
+<span class="token constant">O</span>                   <span class="token attr-value"><span class="token punctuation">=</span> &lt;your company&gt;</span>
+<span class="token constant">OU</span>                  <span class="token attr-value"><span class="token punctuation">=</span> &lt;your company&gt; Certificate Authority</span>
+<span class="token constant">CN</span>                  <span class="token attr-value"><span class="token punctuation">=</span> &lt;your company&gt; Intermediate CA</span>
+</code></pre></div><p>Generate the certificate signing request for the intermediate CA from the intermediate CA's private key. Use the private key ID value from earlier.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ openssl req -config create_intermediate_csr.ini -engine pkcs11 -keyform engine -key bcb48fe9b566ae61891aabbfde6a23d4ff3ab639 -new -sha512 -out <span class="token punctuation">..</span>/intermediate/csr/intermediate.csr
+engine <span class="token string">&quot;pkcs11&quot;</span> set.
+Enter PKCS<span class="token comment">#11 token PIN for SmartCard-HSM (UserPIN):</span>
+</code></pre></div><p>Verify that the CSR was created correctly. Verify that your Subject is correct. Verify that your Public Key and Signature Algorithm are correct.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ openssl req -text -noout -verify -in <span class="token punctuation">..</span>/intermediate/csr/intermediate.csr
+verify OK
+Certificate Request:
+    Data:
+        Version: <span class="token number">1</span> <span class="token punctuation">(</span>0x0<span class="token punctuation">)</span>
+        Subject: C <span class="token operator">=</span> US, ST <span class="token operator">=</span> My State, O <span class="token operator">=</span> My Company, OU <span class="token operator">=</span> My Company Certificate Authority, CN <span class="token operator">=</span> My Company Intermediate CA
+        Subject Public Key Info:
+            Public Key Algorithm: id-ecPublicKey
+                Public-Key: <span class="token punctuation">(</span><span class="token number">384</span> bit<span class="token punctuation">)</span>
+                pub:
+                    04:d0:fb:5c:0c:d1:0c:0b:6e:4d:0f:69:86:75:58:
+                    <span class="token number">24</span>:b6:24:ec:9f:cd:8f:f9:ae:5f:01:09:fe:6f:f3:
+                    ad:88:7c:a7:60:71:7d:a8:94:f3:ff:84:dc:8c:24:
+                    fe:8c:93:b0:cd:84:0a:6a:a9:41:bb:28:66:c0:61:
+                    ce:f6:0e:47:b8:93:d7:18:52:b5:0d:67:62:af:10:
+                    c9:51:42:6e:55:ec:89:25:a6:cd:83:ae:ae:17:30:
+                    <span class="token number">31</span>:11:08:af:db:cd:ee
+                ASN1 OID: secp384r1
+                NIST CURVE: P-384
+        Attributes:
+            a0:00
+    Signature Algorithm: ecdsa-with-SHA512
+         <span class="token number">30</span>:64:02:30:6a:1d:75:8b:59:99:2c:a8:5d:a0:7f:02:7d:9a:
+         aa:40:74:7a:65:20:03:6b:bc:65:fb:7d:d1:7f:5b:24:ae:6f:
+         <span class="token number">40</span>:16:ac:82:0b:80:9b:81:f9:d9:64:ea:0f:41:4c:d7:02:30:
+         4d:28:7f:e3:76:52:c7:10:e1:bd:b7:2e:ea:65:78:41:0c:96:
+         <span class="token number">50</span>:5f:e9:1f:be:18:ac:14:ba:65:3f:b0:2a:f4:0f:d0:56:ab:
+         d0:8c:bf:d0:92:9e:f6:e5:f6:8a:af:a5
+</code></pre></div><p>We need to find out the fully qualified PKCS#11 URI for your private key:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ p11tool --list-all
+warning: no token URL was provided <span class="token keyword">for</span> this operation<span class="token punctuation">;</span> the available tokens are:
+
+pkcs11:model<span class="token operator">=</span>PKCS%2315%20emulated<span class="token punctuation">;</span><span class="token assign-left variable">manufacturer</span><span class="token operator">=</span>www.CardContact.de<span class="token punctuation">;</span><span class="token assign-left variable">serial</span><span class="token operator">=</span>DENK0104068<span class="token punctuation">;</span><span class="token assign-left variable">token</span><span class="token operator">=</span>SmartCard-HSM%20%28UserPIN%29%00%00%00%00%00%00%00%00%00
+
+$ p11tool --login --list-all pkcs11:model<span class="token operator">=</span>PKCS%2315%20emulated<span class="token punctuation">;</span><span class="token assign-left variable">manufacturer</span><span class="token operator">=</span>www.CardContact.de<span class="token punctuation">;</span><span class="token assign-left variable">serial</span><span class="token operator">=</span>DENK0104068<span class="token punctuation">;</span><span class="token assign-left variable">token</span><span class="token operator">=</span>SmartCard-HSM%20%28UserPIN%29%00%00%00%00%00%00%00%00%00
+Token <span class="token string">'SmartCard-HSM (UserPIN)'</span> with URL <span class="token string">'pkcs11:model=PKCS%2315%20emulated;manufacturer=www.CardContact.de;serial=DENK0104068;token=SmartCard-HSM%20%28UserPIN%29%00%00%00%00%00%00%00%00%00'</span> requires user PIN
+Enter PIN:
+Object <span class="token number">0</span>:
+        URL: pkcs11:model<span class="token operator">=</span>PKCS%2315%20emulated<span class="token punctuation">;</span><span class="token assign-left variable">manufacturer</span><span class="token operator">=</span>www.CardContact.de<span class="token punctuation">;</span><span class="token assign-left variable">serial</span><span class="token operator">=</span>DENK0104068<span class="token punctuation">;</span><span class="token assign-left variable">token</span><span class="token operator">=</span>SmartCard-HSM%20%28UserPIN%29%00%00%00%00%00%00%00%00%00<span class="token punctuation">;</span><span class="token assign-left variable">id</span><span class="token operator">=</span>%E0%16%1C%C8%B6%F5%D6%6A%C6%83%5E%CD%EC%B6%23%FC%05%06%A6%75<span class="token punctuation">;</span><span class="token assign-left variable">object</span><span class="token operator">=</span>root<span class="token punctuation">;</span><span class="token assign-left variable">type</span><span class="token operator">=</span>private
+        Type: Private key <span class="token punctuation">(</span>EC/ECDSA-SECP384R1<span class="token punctuation">)</span>
+        Label: root
+        Flags: CKA_PRIVATE<span class="token punctuation">;</span> CKA_NEVER_EXTRACTABLE<span class="token punctuation">;</span> CKA_SENSITIVE<span class="token punctuation">;</span>
+        ID: e0:16:1c:c8:b6:f5:d6:6a:c6:83:5e:cd:ec:b6:23:fc:05:06:a6:75
+
+Object <span class="token number">1</span>:
+        URL: pkcs11:model<span class="token operator">=</span>PKCS%2315%20emulated<span class="token punctuation">;</span><span class="token assign-left variable">manufacturer</span><span class="token operator">=</span>www.CardContact.de<span class="token punctuation">;</span><span class="token assign-left variable">serial</span><span class="token operator">=</span>DENK0104068<span class="token punctuation">;</span><span class="token assign-left variable">token</span><span class="token operator">=</span>SmartCard-HSM%20%28UserPIN%29%00%00%00%00%00%00%00%00%00<span class="token punctuation">;</span><span class="token assign-left variable">id</span><span class="token operator">=</span>%E0%16%1C%C8%B6%F5%D6%6A%C6%83%5E%CD%EC%B6%23%FC%05%06%A6%75<span class="token punctuation">;</span><span class="token assign-left variable">object</span><span class="token operator">=</span>root<span class="token punctuation">;</span><span class="token assign-left variable">type</span><span class="token operator">=</span>public
+        Type: Public key <span class="token punctuation">(</span>EC/ECDSA-SECP384R1<span class="token punctuation">)</span>
+        Label: root
+        ID: e0:16:1c:c8:b6:f5:d6:6a:c6:83:5e:cd:ec:b6:23:fc:05:06:a6:75
+
+Object <span class="token number">2</span>:
+        URL: pkcs11:model<span class="token operator">=</span>PKCS%2315%20emulated<span class="token punctuation">;</span><span class="token assign-left variable">manufacturer</span><span class="token operator">=</span>www.CardContact.de<span class="token punctuation">;</span><span class="token assign-left variable">serial</span><span class="token operator">=</span>DENK0104068<span class="token punctuation">;</span><span class="token assign-left variable">token</span><span class="token operator">=</span>SmartCard-HSM%20%28UserPIN%29%00%00%00%00%00%00%00%00%00<span class="token punctuation">;</span><span class="token assign-left variable">id</span><span class="token operator">=</span>%BC%B4%8F%E9%B5%66%AE%61%89%1A%AB%BF%DE%6A%23%D4%FF%3A%B6%39<span class="token punctuation">;</span><span class="token assign-left variable">object</span><span class="token operator">=</span>intermediate<span class="token punctuation">;</span><span class="token assign-left variable">type</span><span class="token operator">=</span>private
+        Type: Private key <span class="token punctuation">(</span>EC/ECDSA-SECP384R1<span class="token punctuation">)</span>
+        Label: intermediate
+        Flags: CKA_PRIVATE<span class="token punctuation">;</span> CKA_NEVER_EXTRACTABLE<span class="token punctuation">;</span> CKA_SENSITIVE<span class="token punctuation">;</span>
+        ID: bc:b4:8f:e9:b5:66:ae:61:89:1a:ab:bf:de:6a:23:d4:ff:3a:b6:39
+
+Object <span class="token number">3</span>:
+        URL: pkcs11:model<span class="token operator">=</span>PKCS%2315%20emulated<span class="token punctuation">;</span><span class="token assign-left variable">manufacturer</span><span class="token operator">=</span>www.CardContact.de<span class="token punctuation">;</span><span class="token assign-left variable">serial</span><span class="token operator">=</span>DENK0104068<span class="token punctuation">;</span><span class="token assign-left variable">token</span><span class="token operator">=</span>SmartCard-HSM%20%28UserPIN%29%00%00%00%00%00%00%00%00%00<span class="token punctuation">;</span><span class="token assign-left variable">id</span><span class="token operator">=</span>%BC%B4%8F%E9%B5%66%AE%61%89%1A%AB%BF%DE%6A%23%D4%FF%3A%B6%39<span class="token punctuation">;</span><span class="token assign-left variable">object</span><span class="token operator">=</span>intermediate<span class="token punctuation">;</span><span class="token assign-left variable">type</span><span class="token operator">=</span>public
+        Type: Public key <span class="token punctuation">(</span>EC/ECDSA-SECP384R1<span class="token punctuation">)</span>
+        Label: intermediate
+        ID: bc:b4:8f:e9:b5:66:ae:61:89:1a:ab:bf:de:6a:23:d4:ff:3a:b6:39
+</code></pre></div><p>In this instance, the fully qualified PKCS#11 URI is <code>pkcs11:model=PKCS%2315%20emulated;manufacturer=www.CardContact.de;serial=DENK0104068;token=SmartCard-HSM%20%28UserPIN%29%00%00%00%00%00%00%00%00%00;id=%E0%16%1C%C8%B6%F5%D6%6A%C6%83%5E%CD%EC%B6%23%FC%05%06%A6%75;object=root;type=private</code>.</p> <p>Now, we need to create a config file to use the private key of the root certificate to sign the csr of the intermediate certificate.</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">vim</span> sign_intermediate_csr.ini
+</code></pre></div><div class="language-ini extra-class"><pre class="language-ini"><code><span class="token selector">[ ca ]</span>
+<span class="token comment"># `man ca`</span>
+<span class="token constant">default_ca</span> <span class="token attr-value"><span class="token punctuation">=</span> CA_default</span>
+
+<span class="token selector">[ CA_default ]</span>
+<span class="token comment"># Directory and file locations.</span>
+<span class="token constant">dir</span>               <span class="token attr-value"><span class="token punctuation">=</span> /opt/certificate-authority</span>
+<span class="token constant">certs</span>             <span class="token attr-value"><span class="token punctuation">=</span> $dir/certs</span>
+<span class="token constant">crl_dir</span>           <span class="token attr-value"><span class="token punctuation">=</span> $dir/crl</span>
+<span class="token constant">new_certs_dir</span>     <span class="token attr-value"><span class="token punctuation">=</span> $dir/newcerts</span>
+<span class="token constant">database</span>          <span class="token attr-value"><span class="token punctuation">=</span> $dir/index.txt</span>
+<span class="token constant">serial</span>            <span class="token attr-value"><span class="token punctuation">=</span> $dir/serial</span>
+
+<span class="token comment"># The root key and root certificate.</span>
+<span class="token constant">private_key</span>       <span class="token attr-value"><span class="token punctuation">=</span> pkcs11:model=PKCS%2315%20emulated;manufacturer=www.CardContact.de;serial=DENK0104068;token=SmartCard-HSM%20%28UserPIN%29%00%00%00%00%00%00%00%00%00;id=%E0%16%1C%C8%B6%F5%D6%6A%C6%83%5E%CD%EC%B6%23%FC%05%06%A6%75;object=root;type=private</span>
+<span class="token constant">certificate</span>       <span class="token attr-value"><span class="token punctuation">=</span> ../certs/root.crt</span>
+
+<span class="token comment"># SHA-1 is deprecated, so use SHA-2 instead.</span>
+<span class="token constant">default_md</span>        <span class="token attr-value"><span class="token punctuation">=</span> sha512</span>
+
+<span class="token constant">name_opt</span>          <span class="token attr-value"><span class="token punctuation">=</span> ca_default</span>
+<span class="token constant">cert_opt</span>          <span class="token attr-value"><span class="token punctuation">=</span> ca_default</span>
+<span class="token constant">default_days</span>      <span class="token attr-value"><span class="token punctuation">=</span> 375</span>
+<span class="token constant">preserve</span>          <span class="token attr-value"><span class="token punctuation">=</span> no</span>
+<span class="token constant">policy</span>            <span class="token attr-value"><span class="token punctuation">=</span> policy_loose</span>
+
+<span class="token selector">[ policy_loose ]</span>
+<span class="token comment"># Allow the intermediate CA to sign a more diverse range of certificates.</span>
+<span class="token comment"># See the POLICY FORMAT section of the `ca` man page.</span>
+<span class="token constant">countryName</span>             <span class="token attr-value"><span class="token punctuation">=</span> optional</span>
+<span class="token constant">stateOrProvinceName</span>     <span class="token attr-value"><span class="token punctuation">=</span> optional</span>
+<span class="token constant">localityName</span>            <span class="token attr-value"><span class="token punctuation">=</span> optional</span>
+<span class="token constant">organizationName</span>        <span class="token attr-value"><span class="token punctuation">=</span> optional</span>
+<span class="token constant">organizationalUnitName</span>  <span class="token attr-value"><span class="token punctuation">=</span> optional</span>
+<span class="token constant">commonName</span>              <span class="token attr-value"><span class="token punctuation">=</span> supplied</span>
+<span class="token constant">emailAddress</span>            <span class="token attr-value"><span class="token punctuation">=</span> optional</span>
+
+<span class="token selector">[ v3_intermediate_ca ]</span>
+<span class="token comment"># Extensions for a typical intermediate CA (`man x509v3_config`).</span>
+<span class="token constant">subjectKeyIdentifier</span> <span class="token attr-value"><span class="token punctuation">=</span> hash</span>
+<span class="token constant">authorityKeyIdentifier</span> <span class="token attr-value"><span class="token punctuation">=</span> keyid:always,issuer</span>
+<span class="token constant">basicConstraints</span> <span class="token attr-value"><span class="token punctuation">=</span> critical, CA:true, pathlen:0</span>
+<span class="token constant">keyUsage</span> <span class="token attr-value"><span class="token punctuation">=</span> critical, digitalSignature, cRLSign, keyCertSign</span>
+</code></pre></div><p>Then sign the intermediate certificate with the root certificate.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ openssl ca -config sign_intermediate_csr.ini -engine pkcs11 -keyform engine -extensions v3_intermediate_ca -days <span class="token number">1825</span> -notext -md sha512 -create_serial -in <span class="token punctuation">..</span>/intermediate/csr/intermediate.csr -out <span class="token punctuation">..</span>/intermediate/certs/intermediate.crt
+engine <span class="token string">&quot;pkcs11&quot;</span> set.
+Using configuration from sign_intermediate_csr.ini
+Enter PKCS<span class="token comment">#11 token PIN for SmartCard-HSM (UserPIN):</span>
+Check that the request matches the signature
+Signature ok
+Certificate Details:
+        Serial Number:
+            <span class="token number">35</span>:47:4d:05:12:cc:e1:a8:b6:bf:dd:3e:c8:29:7b:18:c0:a1:5c:68
+        Validity
+            Not Before: Aug <span class="token number">18</span> <span class="token number">20</span>:44:17 <span class="token number">2020</span> GMT
+            Not After <span class="token builtin class-name">:</span> Aug <span class="token number">17</span> <span class="token number">20</span>:44:17 <span class="token number">2025</span> GMT
+        Subject:
+            countryName               <span class="token operator">=</span> US
+            stateOrProvinceName       <span class="token operator">=</span> My State
+            organizationName          <span class="token operator">=</span> My Company
+            organizationalUnitName    <span class="token operator">=</span> My Company Certificate Authority
+            commonName                <span class="token operator">=</span> My Company Intermediate CA
+        X509v3 extensions:
+            X509v3 Subject Key Identifier:
+                1D:4F:E5:ED:11:42:9A:AC:25:E4:51:A3:42:67:97:39:A0:10:AE:82
+            X509v3 Authority Key Identifier:
+                keyid:F1:FA:61:75:0B:AC:3C:95:97:EF:73:3C:3F:38:22:B1:DB:D9:BF:41
+
+            X509v3 Basic Constraints: critical
+                CA:TRUE, pathlen:0
+            X509v3 Key Usage: critical
+                Digital Signature, Certificate Sign, CRL Sign
+Certificate is to be certified <span class="token keyword">until</span> Aug <span class="token number">17</span> <span class="token number">20</span>:44:17 <span class="token number">2025</span> GMT <span class="token punctuation">(</span><span class="token number">1825</span> days<span class="token punctuation">)</span>
+Sign the certificate? <span class="token punctuation">[</span>y/n<span class="token punctuation">]</span>:y
+
+
+<span class="token number">1</span> out of <span class="token number">1</span> certificate requests certified, commit? <span class="token punctuation">[</span>y/n<span class="token punctuation">]</span>y
+Write out database with <span class="token number">1</span> new entries
+Data Base Updated
+</code></pre></div><p>Verify that the root certificate was generated correctly. Verify that the Issuer and Subject are different, and correct. Verify that the Key Usage matches the config file. Verify that the signature algorithm are correct above and below.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ openssl x509 -noout -text -in <span class="token punctuation">..</span>/intermediate/certs/intermediate.crt
+Certificate:
+    Data:
+        Version: <span class="token number">3</span> <span class="token punctuation">(</span>0x2<span class="token punctuation">)</span>
+        Serial Number:
+            <span class="token number">35</span>:47:4d:05:12:cc:e1:a8:b6:bf:dd:3e:c8:29:7b:18:c0:a1:5c:68
+        Signature Algorithm: ecdsa-with-SHA512
+        Issuer: C <span class="token operator">=</span> US, ST <span class="token operator">=</span> My State, O <span class="token operator">=</span> My Company, OU <span class="token operator">=</span> My Company Certificate Authority, CN <span class="token operator">=</span> My Company Root CA
+        Validity
+            Not Before: Aug <span class="token number">18</span> <span class="token number">20</span>:44:17 <span class="token number">2020</span> GMT
+            Not After <span class="token builtin class-name">:</span> Aug <span class="token number">17</span> <span class="token number">20</span>:44:17 <span class="token number">2025</span> GMT
+        Subject: C <span class="token operator">=</span> US, ST <span class="token operator">=</span> My State, O <span class="token operator">=</span> My Company, OU <span class="token operator">=</span> My Company Certificate Authority, CN <span class="token operator">=</span> My Company Intermediate CA
+        Subject Public Key Info:
+            Public Key Algorithm: id-ecPublicKey
+                Public-Key: <span class="token punctuation">(</span><span class="token number">384</span> bit<span class="token punctuation">)</span>
+                pub:
+                    04:d0:fb:5c:0c:d1:0c:0b:6e:4d:0f:69:86:75:58:
+                    <span class="token number">24</span>:b6:24:ec:9f:cd:8f:f9:ae:5f:01:09:fe:6f:f3:
+                    ad:88:7c:a7:60:71:7d:a8:94:f3:ff:84:dc:8c:24:
+                    fe:8c:93:b0:cd:84:0a:6a:a9:41:bb:28:66:c0:61:
+                    ce:f6:0e:47:b8:93:d7:18:52:b5:0d:67:62:af:10:
+                    c9:51:42:6e:55:ec:89:25:a6:cd:83:ae:ae:17:30:
+                    <span class="token number">31</span>:11:08:af:db:cd:ee
+                ASN1 OID: secp384r1
+                NIST CURVE: P-384
+        X509v3 extensions:
+            X509v3 Subject Key Identifier:
+                1D:4F:E5:ED:11:42:9A:AC:25:E4:51:A3:42:67:97:39:A0:10:AE:82
+            X509v3 Authority Key Identifier:
+                keyid:F1:FA:61:75:0B:AC:3C:95:97:EF:73:3C:3F:38:22:B1:DB:D9:BF:41
+
+            X509v3 Basic Constraints: critical
+                CA:TRUE, pathlen:0
+            X509v3 Key Usage: critical
+                Digital Signature, Certificate Sign, CRL Sign
+    Signature Algorithm: ecdsa-with-SHA512
+         <span class="token number">30</span>:66:02:31:00:9a:6e:08:d2:d6:3a:29:f6:ba:0c:4c:3a:f4:
+         af:40:5e:e0:71:f2:bc:e4:47:f5:b4:ee:10:d7:27:b1:25:0b:
+         4b:09:78:a1:b8:f2:b8:71:c5:4e:41:33:8e:64:db:ec:eb:02:
+         <span class="token number">31</span>:00:fc:39:26:c2:ad:7b:3c:ab:75:06:34:02:47:79:40:31:
+         1d:eb:17:ad:32:10:67:97:37:6f:7f:3c:ce:3e:12:3c:e9:7c:
+         fa:43:3e:34:5d:5e:f4:f3:2f:fd:6a:2f:14:da
+</code></pre></div><p>Verify that the intermediate certificate verifies against the root certificate.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ openssl verify -CAfile <span class="token punctuation">..</span>/certs/root.crt <span class="token punctuation">..</span>/intermediate/certs/intermediate.crt
+<span class="token punctuation">..</span>/intermediate/certs/intermediate.crt: OK
+</code></pre></div><p>Create a certificate chain file:</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">cat</span> <span class="token punctuation">..</span>/intermediate/certs/intermediate.crt <span class="token punctuation">..</span>/certs/root.crt <span class="token operator">&gt;</span> <span class="token punctuation">..</span>/intermediate/certs/chain.crt
+</code></pre></div><p>You now have a certificate authority backed by an HSM.</p> <h2 id="sign-a-server-certificate"><a href="#sign-a-server-certificate" class="header-anchor">#</a> Sign a Server Certificate</h2> <p>Now that you have a certificate authority, you'd probably like to know how to use it.</p> <p>Create a CSR in the normal method for your application. Proper creation of your certificate, including SAN, for your particular application is outside the scope of this document.</p> <p>We need to find out the fully qualified PKCS#11 URI for your private key:</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ p11tool --list-all
+warning: no token URL was provided <span class="token keyword">for</span> this operation<span class="token punctuation">;</span> the available tokens are:
+
+*pkcs11:model<span class="token operator">=</span>PKCS%2315%20emulated<span class="token punctuation">;</span><span class="token assign-left variable">manufacturer</span><span class="token operator">=</span>www.CardContact.de<span class="token punctuation">;</span><span class="token assign-left variable">serial</span><span class="token operator">=</span>DENK0104068<span class="token punctuation">;</span><span class="token assign-left variable">token</span><span class="token operator">=</span>SmartCard-HSM%20%28UserPIN%29%00%00%00%00%00%00%00%00%00*
+
+$ p11tool --login --list-all pkcs11:model<span class="token operator">=</span>PKCS%2315%20emulated<span class="token punctuation">;</span><span class="token assign-left variable">manufacturer</span><span class="token operator">=</span>www.CardContact.de<span class="token punctuation">;</span><span class="token assign-left variable">serial</span><span class="token operator">=</span>DENK0104068<span class="token punctuation">;</span><span class="token assign-left variable">token</span><span class="token operator">=</span>SmartCard-HSM%20%28UserPIN%29%00%00%00%00%00%00%00%00%00
+Token <span class="token string">'SmartCard-HSM (UserPIN)'</span> with URL <span class="token string">'pkcs11:model=PKCS%2315%20emulated;manufacturer=www.CardContact.de;serial=DENK0104068;token=SmartCard-HSM%20%28UserPIN%29%00%00%00%00%00%00%00%00%00'</span> requires user PIN
+Enter PIN:
+Object <span class="token number">0</span>:
+        URL: pkcs11:model<span class="token operator">=</span>PKCS%2315%20emulated<span class="token punctuation">;</span><span class="token assign-left variable">manufacturer</span><span class="token operator">=</span>www.CardContact.de<span class="token punctuation">;</span><span class="token assign-left variable">serial</span><span class="token operator">=</span>DENK0104068<span class="token punctuation">;</span><span class="token assign-left variable">token</span><span class="token operator">=</span>SmartCard-HSM%20%28UserPIN%29%00%00%00%00%00%00%00%00%00<span class="token punctuation">;</span><span class="token assign-left variable">id</span><span class="token operator">=</span>%E0%16%1C%C8%B6%F5%D6%6A%C6%83%5E%CD%EC%B6%23%FC%05%06%A6%75<span class="token punctuation">;</span><span class="token assign-left variable">object</span><span class="token operator">=</span>root<span class="token punctuation">;</span><span class="token assign-left variable">type</span><span class="token operator">=</span>private
+        Type: Private key <span class="token punctuation">(</span>EC/ECDSA-SECP384R1<span class="token punctuation">)</span>
+        Label: root
+        Flags: CKA_PRIVATE<span class="token punctuation">;</span> CKA_NEVER_EXTRACTABLE<span class="token punctuation">;</span> CKA_SENSITIVE<span class="token punctuation">;</span>
+        ID: e0:16:1c:c8:b6:f5:d6:6a:c6:83:5e:cd:ec:b6:23:fc:05:06:a6:75
+
+Object <span class="token number">1</span>:
+        URL: pkcs11:model<span class="token operator">=</span>PKCS%2315%20emulated<span class="token punctuation">;</span><span class="token assign-left variable">manufacturer</span><span class="token operator">=</span>www.CardContact.de<span class="token punctuation">;</span><span class="token assign-left variable">serial</span><span class="token operator">=</span>DENK0104068<span class="token punctuation">;</span><span class="token assign-left variable">token</span><span class="token operator">=</span>SmartCard-HSM%20%28UserPIN%29%00%00%00%00%00%00%00%00%00<span class="token punctuation">;</span><span class="token assign-left variable">id</span><span class="token operator">=</span>%E0%16%1C%C8%B6%F5%D6%6A%C6%83%5E%CD%EC%B6%23%FC%05%06%A6%75<span class="token punctuation">;</span><span class="token assign-left variable">object</span><span class="token operator">=</span>root<span class="token punctuation">;</span><span class="token assign-left variable">type</span><span class="token operator">=</span>public
+        Type: Public key <span class="token punctuation">(</span>EC/ECDSA-SECP384R1<span class="token punctuation">)</span>
+        Label: root
+        ID: e0:16:1c:c8:b6:f5:d6:6a:c6:83:5e:cd:ec:b6:23:fc:05:06:a6:75
+
+Object <span class="token number">2</span>:
+        URL: pkcs11:model<span class="token operator">=</span>PKCS%2315%20emulated<span class="token punctuation">;</span><span class="token assign-left variable">manufacturer</span><span class="token operator">=</span>www.CardContact.de<span class="token punctuation">;</span><span class="token assign-left variable">serial</span><span class="token operator">=</span>DENK0104068<span class="token punctuation">;</span><span class="token assign-left variable">token</span><span class="token operator">=</span>SmartCard-HSM%20%28UserPIN%29%00%00%00%00%00%00%00%00%00<span class="token punctuation">;</span><span class="token assign-left variable">id</span><span class="token operator">=</span>%BC%B4%8F%E9%B5%66%AE%61%89%1A%AB%BF%DE%6A%23%D4%FF%3A%B6%39<span class="token punctuation">;</span><span class="token assign-left variable">object</span><span class="token operator">=</span>intermediate<span class="token punctuation">;</span><span class="token assign-left variable">type</span><span class="token operator">=</span>private
+        Type: Private key <span class="token punctuation">(</span>EC/ECDSA-SECP384R1<span class="token punctuation">)</span>
+        Label: intermediate
+        Flags: CKA_PRIVATE<span class="token punctuation">;</span> CKA_NEVER_EXTRACTABLE<span class="token punctuation">;</span> CKA_SENSITIVE<span class="token punctuation">;</span>
+        ID: bc:b4:8f:e9:b5:66:ae:61:89:1a:ab:bf:de:6a:23:d4:ff:3a:b6:39
+
+Object <span class="token number">3</span>:
+        URL: pkcs11:model<span class="token operator">=</span>PKCS%2315%20emulated<span class="token punctuation">;</span><span class="token assign-left variable">manufacturer</span><span class="token operator">=</span>www.CardContact.de<span class="token punctuation">;</span><span class="token assign-left variable">serial</span><span class="token operator">=</span>DENK0104068<span class="token punctuation">;</span><span class="token assign-left variable">token</span><span class="token operator">=</span>SmartCard-HSM%20%28UserPIN%29%00%00%00%00%00%00%00%00%00<span class="token punctuation">;</span><span class="token assign-left variable">id</span><span class="token operator">=</span>%BC%B4%8F%E9%B5%66%AE%61%89%1A%AB%BF%DE%6A%23%D4%FF%3A%B6%39<span class="token punctuation">;</span><span class="token assign-left variable">object</span><span class="token operator">=</span>intermediate<span class="token punctuation">;</span><span class="token assign-left variable">type</span><span class="token operator">=</span>public
+        Type: Public key <span class="token punctuation">(</span>EC/ECDSA-SECP384R1<span class="token punctuation">)</span>
+        Label: intermediate
+        ID: bc:b4:8f:e9:b5:66:ae:61:89:1a:ab:bf:de:6a:23:d4:ff:3a:b6:39
+</code></pre></div><p>In this instance, the fully qualified PKCS#11 URI is <code>pkcs11:model=PKCS%2315%20emulated;manufacturer=www.CardContact.de;serial=DENK0104068;token=SmartCard-HSM%20%28UserPIN%29%00%00%00%00%00%00%00%00%00;id=%BC%B4%8F%E9%B5%66%AE%61%89%1A%AB%BF%DE%6A%23%D4%FF%3A%B6%39;object=intermediate;type=private</code>.</p> <p>Create a config file to use the private key of the intermediate certificate to sign the CSRs of your servers.</p> <div class="language-bash extra-class"><pre class="language-bash"><code><span class="token function">vim</span> sign_server_csrs.ini
+</code></pre></div><div class="language-ini extra-class"><pre class="language-ini"><code><span class="token selector">[ ca ]</span>
+<span class="token comment"># `man ca`</span>
+<span class="token constant">default_ca</span> <span class="token attr-value"><span class="token punctuation">=</span> CA_default</span>
+
+<span class="token selector">[ CA_default ]</span>
+<span class="token comment"># Directory and file locations.</span>
+<span class="token constant">dir</span>               <span class="token attr-value"><span class="token punctuation">=</span> /opt/certificate-authority/intermediate</span>
+<span class="token constant">certs</span>             <span class="token attr-value"><span class="token punctuation">=</span> $dir/certs</span>
+<span class="token constant">crl_dir</span>           <span class="token attr-value"><span class="token punctuation">=</span> $dir/crl</span>
+<span class="token constant">new_certs_dir</span>     <span class="token attr-value"><span class="token punctuation">=</span> $dir/newcerts</span>
+<span class="token constant">database</span>          <span class="token attr-value"><span class="token punctuation">=</span> $dir/index.txt</span>
+<span class="token constant">serial</span>            <span class="token attr-value"><span class="token punctuation">=</span> $dir/serial</span>
+
+<span class="token comment"># The root key and root certificate.</span>
+<span class="token constant">private_key</span>       <span class="token attr-value"><span class="token punctuation">=</span> pkcs11:model=PKCS%2315%20emulated;manufacturer=www.CardContact.de;serial=DENK0104068;token=SmartCard-HSM%20%28UserPIN%29%00%00%00%00%00%00%00%00%00;id=%BC%B4%8F%E9%B5%66%AE%61%89%1A%AB%BF%DE%6A%23%D4%FF%3A%B6%39;object=intermediate;type=private</span>
+<span class="token constant">certificate</span>       <span class="token attr-value"><span class="token punctuation">=</span> $dir/certs/intermediate.crt</span>
+
+<span class="token comment"># SHA-1 is deprecated, so use SHA-2 instead.</span>
+<span class="token constant">default_md</span>        <span class="token attr-value"><span class="token punctuation">=</span> sha512</span>
+
+<span class="token constant">name_opt</span>          <span class="token attr-value"><span class="token punctuation">=</span> ca_default</span>
+<span class="token constant">cert_opt</span>          <span class="token attr-value"><span class="token punctuation">=</span> ca_default</span>
+<span class="token constant">default_days</span>      <span class="token attr-value"><span class="token punctuation">=</span> 375</span>
+<span class="token constant">preserve</span>          <span class="token attr-value"><span class="token punctuation">=</span> no</span>
+<span class="token constant">policy</span>            <span class="token attr-value"><span class="token punctuation">=</span> policy_loose</span>
+
+<span class="token selector">[ policy_loose ]</span>
+<span class="token comment"># Allow the intermediate CA to sign a more diverse range of certificates.</span>
+<span class="token comment"># See the POLICY FORMAT section of the `ca` man page.</span>
+<span class="token constant">countryName</span>             <span class="token attr-value"><span class="token punctuation">=</span> optional</span>
+<span class="token constant">stateOrProvinceName</span>     <span class="token attr-value"><span class="token punctuation">=</span> optional</span>
+<span class="token constant">localityName</span>            <span class="token attr-value"><span class="token punctuation">=</span> optional</span>
+<span class="token constant">organizationName</span>        <span class="token attr-value"><span class="token punctuation">=</span> optional</span>
+<span class="token constant">organizationalUnitName</span>  <span class="token attr-value"><span class="token punctuation">=</span> optional</span>
+<span class="token constant">commonName</span>              <span class="token attr-value"><span class="token punctuation">=</span> supplied</span>
+<span class="token constant">emailAddress</span>            <span class="token attr-value"><span class="token punctuation">=</span> optional</span>
+
+<span class="token selector">[ server_cert ]</span>
+<span class="token comment"># Extensions for server certificates (`man x509v3_config`).</span>
+<span class="token constant">basicConstraints</span> <span class="token attr-value"><span class="token punctuation">=</span> CA:FALSE</span>
+<span class="token constant">nsCertType</span> <span class="token attr-value"><span class="token punctuation">=</span> server</span>
+<span class="token constant">nsComment</span> <span class="token attr-value"><span class="token punctuation">=</span> &quot;OpenSSL Generated Server Certificate&quot;</span>
+<span class="token constant">subjectKeyIdentifier</span> <span class="token attr-value"><span class="token punctuation">=</span> hash</span>
+<span class="token constant">authorityKeyIdentifier</span> <span class="token attr-value"><span class="token punctuation">=</span> keyid,issuer:always</span>
+<span class="token constant">keyUsage</span> <span class="token attr-value"><span class="token punctuation">=</span> critical, digitalSignature, keyEncipherment</span>
+<span class="token constant">extendedKeyUsage</span> <span class="token attr-value"><span class="token punctuation">=</span> serverAuth</span>
+</code></pre></div><p>Then run openssl to sign the server's CSR.</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ openssl ca -config sign_server_csrs.ini -engine pkcs11 -keyform engine -extensions server_cert -days <span class="token number">375</span> -notext -md sha512 -create_serial -in server_cert.csr -out server_cert.crt
+engine <span class="token string">&quot;pkcs11&quot;</span> set.
+Using configuration from sign_server_csrs.ini
+Enter PKCS<span class="token comment">#11 token PIN for SmartCard-HSM (UserPIN):</span>
+Check that the request matches the signature
+Signature ok
+Certificate Details:
+        Serial Number:
+            <span class="token number">40</span>:7f:dc:90:b0:3a:1b:fb:d3:e2:74:8d:40:28:a8:12:f7:7e:c3:74
+        Validity
+            Not Before: Aug <span class="token number">18</span> <span class="token number">21</span>:32:42 <span class="token number">2020</span> GMT
+            Not After <span class="token builtin class-name">:</span> Aug <span class="token number">28</span> <span class="token number">21</span>:32:42 <span class="token number">2021</span> GMT
+        Subject:
+            countryName               <span class="token operator">=</span> US
+            stateOrProvinceName       <span class="token operator">=</span> My State
+            organizationName          <span class="token operator">=</span> My Company
+            organizationalUnitName    <span class="token operator">=</span> media
+            commonName                <span class="token operator">=</span> media
+        X509v3 extensions:
+            X509v3 Basic Constraints:
+                CA:FALSE
+            Netscape Cert Type:
+                SSL Server
+            Netscape Comment:
+                OpenSSL Generated Server Certificate
+            X509v3 Subject Key Identifier:
+                <span class="token number">26</span>:89:19:95:6C:93:8C:DD:6E:AA:61:D5:C0:E6:78:CC:F1:47:64:FC
+            X509v3 Authority Key Identifier:
+                keyid:1D:4F:E5:ED:11:42:9A:AC:25:E4:51:A3:42:67:97:39:A0:10:AE:82
+                DirName:/C<span class="token operator">=</span>US/ST<span class="token operator">=</span>My State/O<span class="token operator">=</span>My Company/OU<span class="token operator">=</span>My Company Certificate Authority/CN<span class="token operator">=</span>My Company Root CA
+                serial:35:47:4D:05:12:CC:E1:A8:B6:BF:DD:3E:C8:29:7B:18:C0:A1:5C:68
+
+            X509v3 Key Usage: critical
+                Digital Signature, Key Encipherment
+            X509v3 Extended Key Usage:
+                TLS Web Server Authentication
+Certificate is to be certified <span class="token keyword">until</span> Aug <span class="token number">28</span> <span class="token number">21</span>:32:42 <span class="token number">2021</span> GMT <span class="token punctuation">(</span><span class="token number">375</span> days<span class="token punctuation">)</span>
+Sign the certificate? <span class="token punctuation">[</span>y/n<span class="token punctuation">]</span>:y
+
+
+<span class="token number">1</span> out of <span class="token number">1</span> certificate requests certified, commit? <span class="token punctuation">[</span>y/n<span class="token punctuation">]</span>y
+Write out database with <span class="token number">1</span> new entries
+Data Base Updated
+</code></pre></div><h2 id="references"><a href="#references" class="header-anchor">#</a> References</h2> <p>I used the following resources to help in compiling this document.</p> <ul><li><a href="https://github.com/OpenSC/OpenSC/wiki/SmartCardHSM#initialize-the-device" target="_blank" rel="noopener noreferrer">How to initialize your Nitrokey HSM<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://jamielinux.com/docs/openssl-certificate-authority/create-the-root-pair.html" target="_blank" rel="noopener noreferrer">How to create a root and intermediate CA<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://www.phildev.net/ssl/creating_ca.html" target="_blank" rel="noopener noreferrer">How to ensure the serial numbers of your intermediate CA and server certs are up to spec<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://dev.to/benjaminblack/obtaining-an-elliptic-curve-dsa-certificate-with-lets-encrypt-51bc" target="_blank" rel="noopener noreferrer">How to generate ECC private keys<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li> <li><a href="https://www.infradead.org/openconnect/pkcs11.html" target="_blank" rel="noopener noreferrer">How to find the PCKS11 URI from your HSM<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></li></ul> <p>This document was originally <a href="https://gist.github.com/lyntux/f02c6c3414ce48bc8ea8ab6dcdba1623" target="_blank" rel="noopener noreferrer">written by lyntux<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>.</p></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/Nitrokey/nitrokey-documentation/edit/master/hsm/mac/creating-certificate-authority.md" target="_blank" rel="noopener noreferrer">Help us improve this page!</a> <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></div> <div class="last-updated"><span class="prefix">Last Updated:</span> <span class="time">8/19/2020, 7:56:06 PM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/hsm/mac/login-to-windows-domain-computers-with-ms-active-directory.html" class="prev">
+        Login to Windows Domain Computers With MS Active Directory
+      </a></span> <!----></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.979202d4.js" defer></script><script src="/assets/js/30.70da4933.js" defer></script><script src="/assets/js/10.ac6fee3f.js" defer></script>
+  </body>
+</html>
