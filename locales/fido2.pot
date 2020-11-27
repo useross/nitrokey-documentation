@@ -1,0 +1,393 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Nitrokey
+# This file is distributed under the same license as the Nitrokey Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Nitrokey Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-11-27 16:49+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../fido2/index.md:2
+msgid "editLink: false"
+msgstr ""
+
+#: ../fido2/index.md:5
+msgid "Nitrokey FIDO2"
+msgstr ""
+
+#: ../fido2/index.md:7
+msgid "Choose your operating system:"
+msgstr ""
+
+#: ../fido2/index.md:10
+msgid "Windows"
+msgstr ""
+
+#: ../fido2/index.md:11
+msgid "Mac"
+msgstr ""
+
+#: ../fido2/index.md:12
+msgid "Linux"
+msgstr ""
+
+#: ../fido2/linux/index.md:1
+msgid "FIDO2 with Linux"
+msgstr ""
+
+#: ../fido2/linux/index.md:3
+#: ../fido2/mac/index.md:3
+#: ../fido2/windows/index.md:3
+msgid "The Nitrokey FIDO2 supports two-factor authentication (2FA) and passwordless authentication:"
+msgstr ""
+
+#: ../fido2/linux/index.md:4
+#: ../fido2/mac/index.md:4
+#: ../fido2/windows/index.md:4
+msgid "With passwordless authentication, entering a password is replaced by logging in with the Nitrokey FIDO2 and a PIN."
+msgstr ""
+
+#: ../fido2/linux/index.md:5
+#: ../fido2/mac/index.md:5
+#: ../fido2/windows/index.md:5
+msgid "With two-factor authentication (2FA), the Nitrokey FIDO2 is checked in addition to the password."
+msgstr ""
+
+#: ../fido2/linux/index.md:7
+#: ../fido2/mac/index.md:7
+#: ../fido2/windows/index.md:7
+msgid "The Nitrokey FIDO2 can be used with any current browser."
+msgstr ""
+
+#: ../fido2/linux/index.md:9
+#: ../fido2/mac/index.md:9
+#: ../fido2/windows/index.md:9
+msgid "::: tip IMPORTANT The Nitrokey App can not be used for the Nitrokey FIDO2. :::"
+msgstr ""
+
+#: ../fido2/linux/index.md:13
+#: ../fido2/mac/index.md:13
+#: ../fido2/windows/index.md:13
+msgid "::: tip TIP Check online if your Nitrokey FIDO2 has the latest firmware installed. :::"
+msgstr ""
+
+#: ../fido2/linux/index.md:18
+#: ../fido2/mac/index.md:18
+#: ../fido2/windows/index.md:18
+msgid "Passwordless authentication"
+msgstr ""
+
+#: ../fido2/linux/index.md:20
+#: ../fido2/mac/index.md:20
+#: ../fido2/windows/index.md:20
+msgid "Open a web page that supports FIDO2 (currently only Microsoft)."
+msgstr ""
+
+#: ../fido2/linux/index.md:21
+#: ../fido2/mac/index.md:21
+#: ../fido2/windows/index.md:21
+msgid "Log in to the website and go to \"Set up security key\" in the security settings of your account."
+msgstr ""
+
+#: ../fido2/linux/index.md:22
+#: ../fido2/mac/index.md:22
+#: ../fido2/windows/index.md:22
+msgid "Now you need to set a PIN for your Nitrokey FIDO2."
+msgstr ""
+
+#: ../fido2/linux/index.md:23
+#: ../fido2/mac/index.md:23
+#: ../fido2/windows/index.md:23
+msgid "Touch the button of your Nitrokey FIDO2 when prompted."
+msgstr ""
+
+#: ../fido2/linux/index.md:24
+#: ../fido2/mac/index.md:24
+#: ../fido2/windows/index.md:24
+msgid "Once you have successfully configured the device, you will need to activate your Nitrokey FIDO2 this way each time you log in, after entering your PIN."
+msgstr ""
+
+#: ../fido2/linux/index.md:27
+#: ../fido2/mac/index.md:27
+#: ../fido2/windows/index.md:27
+msgid "Two-Factor Authentication (2FA)"
+msgstr ""
+
+#: ../fido2/linux/index.md:29
+#: ../fido2/mac/index.md:29
+#: ../fido2/windows/index.md:29
+msgid "Open one of the websites that support FIDO U2F."
+msgstr ""
+
+#: ../fido2/linux/index.md:30
+#: ../fido2/mac/index.md:30
+#: ../fido2/windows/index.md:30
+msgid "Log in to the website and enable two-factor authentication in your account settings. (In most cases you will find a link to the documentation of the supported web service at dongleauth.info)"
+msgstr ""
+
+#: ../fido2/linux/index.md:31
+#: ../fido2/mac/index.md:31
+#: ../fido2/windows/index.md:31
+msgid "Register your Nitrokey FIDO2 in the account settings by touching the button to activate the Nitrokey FIDO2. After you have successfully configured the device, you must activate the Nitrokey FIDO2 this way each time you log in."
+msgstr ""
+
+#: ../fido2/linux/index.md:33
+#: ../fido2/mac/index.md:33
+#: ../fido2/windows/index.md:33
+msgid "Checkout the various use cases and supported applications."
+msgstr ""
+
+#: ../fido2/linux/index.md:35
+#: ../fido2/mac/index.md:35
+#: ../fido2/windows/index.md:35
+msgid "::: tip NOTE Google only accepts the Chrome browser for registering the Nitrokey FIDO2 Logging in works fine with Firefox though. :::"
+msgstr ""
+
+#: ../fido2/linux/index.md:40
+#: ../fido2/mac/index.md:40
+#: ../fido2/windows/index.md:40
+msgid "Touch Button and LED Behavior"
+msgstr ""
+
+#: ../fido2/linux/index.md:42
+#: ../fido2/mac/index.md:42
+#: ../fido2/windows/index.md:42
+msgid "The first FIDO operation is automatically accepted within two seconds after connecting Nitrokey FIDO2. In this case touching the touch button is not required."
+msgstr ""
+
+#: ../fido2/linux/index.md:44
+#: ../fido2/mac/index.md:44
+#: ../fido2/windows/index.md:44
+msgid "Multiple operations can be accepted by a single touch. For this, keep the touch button touched for up to 10 seconds."
+msgstr ""
+
+#: ../fido2/linux/index.md:46
+#: ../fido2/mac/index.md:46
+#: ../fido2/windows/index.md:46
+#: ../fido2/windows/index.md:63
+msgid "To avoid accidental and malicious reset of the Nitrokey, the required touch confirmation time for the FIDO2 reset operation is longer and with a distinct LED behavior (red LED light) than normal operations. To reset the Nitrokey FIDO2, confirm by touching the touch button for at least 5 seconds until the green or blue LED lights up."
+msgstr ""
+
+#: ../fido2/linux/index.md:48
+#: ../fido2/mac/index.md:48
+#: ../fido2/windows/index.md:48
+msgid "| LED Color                    | Event                                                                   | Time Period                                                               | Comments                                                                                                                                                                                                                                          | |------------------------------|-------------------------------------------------------------------------|---------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| | Any (blinking)             | Awaiting for touch                                                      | Until touch is confirmed or timed out                                     |                                                                                                                                                                                                                                                   | | Any (blinking faster)      | Touch detected, counting seconds                                        | Until touch is confirmed or timed out                                     |                                                                                                                                                                                                                                                   | | White (blinks)              | Touch request for FIDO registration or authentication operation      |                                                                           | Requires 1 second touch to complete; timeout is usually about 30 seconds                                                                                                                                                                                                               | |  Yellow (blinks)            | Touch request for configuration operation                             |                                                                           | Requires 5 seconds touch to complete; e.g. used for activating firmware update mode                                                                                                                                                                                                              | | Red (blinks)                | Touch request for reset operation                                     | Available only during the very first 10 seconds after Nitrokey is powered | Requires 5 seconds touch to complete; e.g. used for FIDO2 reset operation                                                                                                                                                                                                              | | Green (constant)           | Touch accepted, Nitrokey is active and accepting further FIDO2 operations | After touch was registered, 10 seconds timeout                            | For the FIDO registration or authentication operations after a confirmation Nitrokey enters into \"activation\" mode, auto-accepting any following mentioned operations until touch button is released, but not longer than 10 seconds                               | | Blue (constant)            | Touch consumed - accepted and used up by the operation                 | Until touch is released                                                   | Touch consumption here means, that without releasing the touch button, and touching again the Nitrokey will not confirm any new operations                                                                                                          | | White <br/> (single blink) | Nitrokey ready to work                                                    | 0.5 seconds after powering up                                            |                                                                                                                                                                                                                                                   | | - (no LED signal)            | Nitrokey is idle                              |  |  | | - (no LED signal)            | Auto-accept single FIDO registration or authentication operation                              | Within first 2 seconds after powering up                                        | Nitrokey is automatically accepting any single FIDO registration or authentication operation upon insertion event - the latter is treated as an equivalent of the touch button registration signal (user presence); the configuration/reset operations are not accepted | | All colors                   | Nitrokey is in Firmware Update mode                                       | Active until firmware update operation is successful, or until reinsertion | If the firmware update fails, the Nitrokey will stay in the this mode until the firmware is written correctly                                                                                           |"
+msgstr ""
+
+#: ../fido2/linux/index.md:63
+msgid "Troubleshooting"
+msgstr ""
+
+#: ../fido2/linux/index.md:65
+msgid "If the Nitrokey is not detected, proceed the following:"
+msgstr ""
+
+#: ../fido2/linux/index.md:67
+msgid "Copy this file 41-nitrokey.rules to /etc/udev/rules.d/. In very rare cases, the system will need the older version of this file."
+msgstr ""
+
+#: ../fido2/linux/index.md:68
+msgid "Restart udev via sudo service udev restart."
+msgstr ""
+
+#: ../fido2/mac/index.md:1
+msgid "FIDO2 with macOS"
+msgstr ""
+
+#: ../fido2/windows/index.md:1
+msgid "Nitrokey FIDO2 with Windows"
+msgstr ""
+
+#: ../fido2/windows/index.md:62
+msgid "Nitrokey Reset"
+msgstr ""
+
+#: ../fido2/windows/index.md:65
+msgid "Windows 10"
+msgstr ""
+
+#: ../fido2/windows/index.md:66
+msgid "Make sure you use Windows 10 at least version 2004. Please follow Windows' reset wizard."
+msgstr ""
+
+#: ../fido2/windows/index.md:68
+msgid "If the total taken time for execution will be more than 10 seconds, the Windows OS' user interface will report failure. Reset operation is executed on the Nitrokey even after the latter is reported failing, as long as the user's touch will be registered before the Nitrokey's internal operation timeout (touch confirmation is shown with the blue color)."
+msgstr ""
+
+#: ../fido2/windows/index.md:70
+msgid "Older Versions of Windows 10"
+msgstr ""
+
+#: ../fido2/windows/index.md:71
+msgid "In Windows 10 version 1909 or older the Nitrokey has to be reinserted right before the reset operation is executed. The reset operation has to be confirmed by touching the touch button twice."
+msgstr ""
+
+#: ../fido2/windows/index.md:73
+msgid "Detailed scenario:"
+msgstr ""
+
+#: ../fido2/windows/index.md:74
+msgid "Reinsert the Nitrokey right before executing reset operation"
+msgstr ""
+
+#: ../fido2/windows/index.md:75
+msgid "Start the reset operation in the user interface"
+msgstr ""
+
+#: ../fido2/windows/index.md:76
+msgid "When the LED blinks white, touch the touch button for 1 second until it turns green."
+msgstr ""
+
+#: ../fido2/windows/index.md:77
+msgid "Release the touch"
+msgstr ""
+
+#: ../fido2/windows/index.md:78
+msgid "When the LED blinks red, touch the touch button for 5 seconds until it turns blue."
+msgstr ""
+
+#: ../fido2/windows/index.md:80
+msgid "Windows 10 on a Virtual Machine"
+msgstr ""
+
+#: ../fido2/windows/index.md:81
+msgid "Please keep in mind Nitrokey has internal timeout for accepting the FIDO reset operation of 10 seconds since powering up. If the Nitrokey will connect to a virtual machine later than that, it will return error and the operation will be aborted."
+msgstr ""
+
+#: ../fido2/windows/passwordless-authentication-with-microsoft.md:1
+msgid "Passwordless Authentication with Microsoft"
+msgstr ""
+
+#: ../fido2/windows/passwordless-authentication-with-microsoft.md:3
+msgid "The Nitrokey FIDO2 supports password-less authentication, where entering a password is replaced by logging in with the Nitrokey FIDO2 and a PIN."
+msgstr ""
+
+#: ../fido2/windows/passwordless-authentication-with-microsoft.md:5
+msgid "Sample login to Microsoft with the Nitrokey FIDO2"
+msgstr ""
+
+#: ../fido2/windows/passwordless-authentication-with-microsoft.md:7
+msgid "Click on \"Sign in with security key\"."
+msgstr ""
+
+#: ../fido2/windows/passwordless-authentication-with-microsoft.md:9
+msgid "img0"
+msgstr ""
+
+#: ../fido2/windows/passwordless-authentication-with-microsoft.md:11
+msgid "Enter your PIN for the Nitrokey FIDO2."
+msgstr ""
+
+#: ../fido2/windows/passwordless-authentication-with-microsoft.md:13
+msgid "img1"
+msgstr ""
+
+#: ../fido2/windows/passwordless-authentication-with-microsoft.md:15
+msgid "Touch your Nitrokey FIDO2 at the indicated spot."
+msgstr ""
+
+#: ../fido2/windows/passwordless-authentication-with-microsoft.md:17
+msgid "img2"
+msgstr ""
+
+#: ../fido2/windows/passwordless-authentication-with-microsoft.md:19
+msgid "Now you are logged in!"
+msgstr ""
+
+#: ../fido2/windows/passwordless-authentication-with-microsoft.md:21
+msgid "Setting up Passwordless Authentication"
+msgstr ""
+
+#: ../fido2/windows/passwordless-authentication-with-microsoft.md:23
+msgid "Here we offer you a guide on how to set up passwordless authentication for your Microsoft account with the Nitrokey FIDO2."
+msgstr ""
+
+#: ../fido2/windows/passwordless-authentication-with-microsoft.md:25
+msgid "You need Windows 10 (update October 2018 or later) and the Microsoft Edge or Google Chrome browser."
+msgstr ""
+
+#: ../fido2/windows/passwordless-authentication-with-microsoft.md:27
+msgid "Log in to your Microsoft account and go to your \"Account\" page."
+msgstr ""
+
+#: ../fido2/windows/passwordless-authentication-with-microsoft.md:29
+msgid "Select \"Security\"."
+msgstr ""
+
+#: ../fido2/windows/passwordless-authentication-with-microsoft.md:31
+msgid "img3"
+msgstr ""
+
+#: ../fido2/windows/passwordless-authentication-with-microsoft.md:33
+msgid "Select \"More security options\""
+msgstr ""
+
+#: ../fido2/windows/passwordless-authentication-with-microsoft.md:35
+msgid "img4"
+msgstr ""
+
+#: ../fido2/windows/passwordless-authentication-with-microsoft.md:37
+msgid "Select \"Set up a security key\"."
+msgstr ""
+
+#: ../fido2/windows/passwordless-authentication-with-microsoft.md:39
+msgid "img5"
+msgstr ""
+
+#: ../fido2/windows/passwordless-authentication-with-microsoft.md:41
+msgid "Confirm with \"Next\" under \"USB device\"."
+msgstr ""
+
+#: ../fido2/windows/passwordless-authentication-with-microsoft.md:43
+msgid "img6"
+msgstr ""
+
+#: ../fido2/windows/passwordless-authentication-with-microsoft.md:45
+msgid "Enter a PIN that you want to use for your Nitrokey FIDO2 and then select \"Next\"."
+msgstr ""
+
+#: ../fido2/windows/passwordless-authentication-with-microsoft.md:47
+msgid "img7"
+msgstr ""
+
+#: ../fido2/windows/passwordless-authentication-with-microsoft.md:49
+msgid "Now tap on the marked position of the Nitrokey FIDO2."
+msgstr ""
+
+#: ../fido2/windows/passwordless-authentication-with-microsoft.md:51
+msgid "img8"
+msgstr ""
+
+#: ../fido2/windows/passwordless-authentication-with-microsoft.md:53
+msgid "Confirm with \"Allow\"."
+msgstr ""
+
+#: ../fido2/windows/passwordless-authentication-with-microsoft.md:55
+msgid "img9"
+msgstr ""
+
+#: ../fido2/windows/passwordless-authentication-with-microsoft.md:57
+msgid "Name your Nitrokey FIDO2 and then select \"Next\"."
+msgstr ""
+
+#: ../fido2/windows/passwordless-authentication-with-microsoft.md:59
+msgid "img10"
+msgstr ""
+
+#: ../fido2/windows/passwordless-authentication-with-microsoft.md:61
+msgid "Now you have successfully set up password-free authentication for your Microsoft account! Confirm with \"Got it\"."
+msgstr ""
+
+#: ../fido2/windows/passwordless-authentication-with-microsoft.md:64
+msgid "img11"
+msgstr ""
+

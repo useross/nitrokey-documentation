@@ -64,6 +64,15 @@ language = 'en'
 locale_dirs = ['locales']
 
 
+# Weblate Hack to only have one pot file
+import sphinx.transforms.i18n
+import sphinx.util.i18n
+ # Hacky way to have all localized content in single domain
+sphinx.transforms.i18n.docname_to_domain = (
+    sphinx.util.i18n.docname_to_domain
+) = lambda docname, compact: "docs"
+
+
 # If true, a document’s text domain is its docname if it is a top-level project file and its very base directory otherwise.
 # If set to string, all document’s text domain is this string, making all documents use single text domain.
 # By default, the document markup/code.rst ends up in the markup text domain. With this option set to False, it is markup/code.
