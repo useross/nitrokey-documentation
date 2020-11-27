@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Nitrokey Documentation\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-11-24 18:52+0100\n"
-"PO-Revision-Date: 2020-11-27 12:46+0000\n"
+"PO-Revision-Date: 2020-11-27 13:49+0000\n"
 "Last-Translator: Weblate Admin <ben@dotplex.com>\n"
 "Language-Team: German <https://translate.nitrokey.com/projects/"
 "nitrokey-documentation/nitrokey-documentation-spinx-branch/de/>\n"
@@ -78,7 +78,7 @@ msgstr ""
 #: ../nitrokey-documentation/x230/ubuntu/firmware-update.md:56
 #: ../nitrokey-documentation/x230/ubuntu/system-update.md:14
 msgid "img2"
-msgstr ""
+msgstr "img2"
 
 #: ../nitrokey-documentation/x230/default-boot.md:13
 #: ../nitrokey-documentation/x230/default-boot.md:35
@@ -93,7 +93,7 @@ msgstr ""
 #: ../nitrokey-documentation/x230/ubuntu/firmware-update.md:70
 #: ../nitrokey-documentation/x230/ubuntu/firmware-update.md:78
 msgid "Confirm the process with Enter."
-msgstr ""
+msgstr "Bestätigen Sie den Vorgang mit Enter."
 
 #: ../nitrokey-documentation/x230/default-boot.md:15
 #: ../nitrokey-documentation/x230/factory-reset.md:23
@@ -109,13 +109,16 @@ msgstr ""
 #: ../nitrokey-documentation/x230/ubuntu/firmware-update.md:60
 #: ../nitrokey-documentation/x230/ubuntu/system-update.md:18
 msgid "img3"
-msgstr ""
+msgstr "img3"
 
 #: ../nitrokey-documentation/x230/default-boot.md:17
 #: ../nitrokey-documentation/x230/qubes/default-boot.md:17
 #: ../nitrokey-documentation/x230/ubuntu/default-boot.md:17
 msgid "Now insert the Nitrokey if this is not already the case and confirm with Enter. Then you have to enter the User PIN of the Nitrokey."
 msgstr ""
+"Fügen Sie nun den Nitrokey ein, falls dies noch nicht der Fall ist, und "
+"bestätigen Sie mit Enter. Dann müssen Sie die Benutzer-PIN des Nitrokeys "
+"eingeben."
 
 #: ../nitrokey-documentation/x230/default-boot.md:33
 #: ../nitrokey-documentation/x230/qubes/default-boot.md:33
