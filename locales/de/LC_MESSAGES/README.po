@@ -1,0 +1,86 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Nitrokey
+# This file is distributed under the same license as the Nitrokey
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Nitrokey Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-11-27 17:16+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../README.md:1
+msgid "Nitrokey Documentation"
+msgstr ""
+
+#: ../../README.md:4
+msgid "Build Status"
+msgstr ""
+
+#: ../../README.md:6
+msgid "Nitrokey's User Documentation"
+msgstr ""
+
+#: ../../README.md:8
+msgid "Setup"
+msgstr ""
+
+#: ../../README.md:10
+msgid ""
+"This documentation is based on VuePress. It's a static page generator so "
+"that for testing purposes you need to install VuePress on your local "
+"system:"
+msgstr ""
+
+#: ../../README.md:12
+msgid "Install"
+msgstr ""
+
+#: ../../README.md:18
+msgid "Start editing content"
+msgstr ""
+
+#: ../../README.md:20
+msgid "Test your content locally"
+msgstr ""
+
+#: ../../README.md:26
+msgid "Publish changes by pushing to git"
+msgstr ""
+
+#: ../../README.md:28
+msgid "Tips and Conventions"
+msgstr ""
+
+#: ../../README.md:30
+msgid "Menus and other settings are defined in .vuepress/config.js."
+msgstr ""
+
+#: ../../README.md:31
+msgid "Write filenames in lower case and use dashes (\"-\") instead of spaces."
+msgstr ""
+
+#: ../../README.md:32
+msgid ""
+"For content which is identical for different models or operating systems,"
+" use symbolic links to avoid duplication of files. Locate those "
+"instructions not in but next to the operating system folders."
+msgstr ""
+
+#: ../../README.md:33
+msgid "Add a subfolder with the numbered image files for each guide."
+msgstr ""
+
+#: ../../README.md:34
+msgid "Avoid plain URLs in text but use hyperlinks instead."
+msgstr ""
+

@@ -1,0 +1,92 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Nitrokey
+# This file is distributed under the same license as the Nitrokey
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Nitrokey Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-11-27 17:16+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../storage/mac/index.md:1
+msgid "Nitrokey Storage, Mac"
+msgstr ""
+
+#: ../../storage/mac/index.md:3
+msgid ""
+"Important: Once you plug in the Nitrokey, your computer will start the "
+"Keyboard Setup Assistant. Don't run through this assistant but exit it "
+"right away."
+msgstr ""
+
+#: ../../storage/mac/index.md:4
+msgid ""
+"Download and start the Nitrokey App. Perhaps you want to store it on the "
+"unencrypted partition of your Nitrokey Storage"
+msgstr ""
+
+#: ../../storage/mac/index.md:5
+msgid ""
+"Open the About window from Nitrokey App's menu and check if you have the "
+"latest firmware installed. If it's not the latest, please update."
+msgstr ""
+
+#: ../../storage/mac/index.md:6
+msgid ""
+"Use the Nitrokey App to change the default User PIN (default: 123456) and"
+" Admin PIN (default: 12345678) to your own choices."
+msgstr ""
+
+#: ../../storage/mac/index.md:8
+msgid ""
+"Your Nitrokey is now ready to use. Checkout the various use cases and "
+"supported applications."
+msgstr ""
+
+#: ../../storage/mac/index.md:10
+msgid "::: tip  Note"
+msgstr ""
+
+#: ../../storage/mac/index.md:11
+msgid ""
+"For some Versions of MacOS it is necessary to install custom ccid driver "
+"(for information see here), but in general MacOS should have the driver "
+"onboard."
+msgstr ""
+
+#: ../../storage/mac/index.md:12
+msgid ""
+"For many use cases described, it is necessary to have either OpenPGP or "
+"S/MIME keys installed on the device (see below). :::"
+msgstr ""
+
+#: ../../storage/mac/index.md:15
+msgid "Key Creation with OpenPGP or S/MIME"
+msgstr ""
+
+#: ../../storage/mac/index.md:16
+msgid ""
+"There are two widely used standards for email encryption. While "
+"OpenPGP/GnuPG is popular among individuals, S/MIME/x.509 is mostly used "
+"by enterprises. If you are in doubt which one to choose, you should use "
+"OpenPGP."
+msgstr ""
+
+#: ../../storage/mac/index.md:18
+msgid "instructions for using the OpenPGP standard with the Nitrokey"
+msgstr ""
+
+#: ../../storage/mac/index.md:19
+msgid "instructions for using S/MIME with the Nitrokey"
+msgstr ""
+

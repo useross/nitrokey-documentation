@@ -1,0 +1,147 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Nitrokey
+# This file is distributed under the same license as the Nitrokey
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Nitrokey Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-11-27 17:16+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../start/linux/index.md:1
+msgid "Nitrokey Start, Linux"
+msgstr ""
+
+#: ../../start/linux/index.md:3
+msgid ""
+"Install scdaemon and GnuPG 2.1 or higher by using your package manager "
+"(e.g. apt update && apt install scdaemon gpg2 on Ubuntu)."
+msgstr ""
+
+#: ../../start/linux/index.md:4
+msgid "Connect your Nitrokey to your computer."
+msgstr ""
+
+#: ../../start/linux/index.md:5
+msgid "Use GnuPG to generate new keys or import existing ones."
+msgstr ""
+
+#: ../../start/linux/index.md:7
+msgid ""
+"::: tip Note It is indeed necessary to first import or create new keys "
+"and change the PINs afterwards. Otherwise changing User PIN will fail! "
+"Furthermore overriding keys results in PIN reset (default values), please"
+" keep this in mind! :::"
+msgstr ""
+
+#: ../../start/linux/index.md:10
+msgid ""
+"Change the Admin PIN (default: 12345678) and then the User PIN (default: "
+"123456) to your own choices."
+msgstr ""
+
+#: ../../start/linux/index.md:11
+msgid ""
+"The PIN must consist of at least 14 characters (starting from RTM.8), can"
+" contain any character (not only numbers). Do not select only numbers. If"
+" your environment allows that, use emoticons or national characters."
+msgstr ""
+
+#: ../../start/linux/index.md:12
+msgid ""
+"The longer the PIN the better. It is possible to use 6 randomly selected "
+"words instead as well for the same or better security than random "
+"character string."
+msgstr ""
+
+#: ../../start/linux/index.md:13
+msgid ""
+"Use 'gpg --card-edit' -> 'admin' -> 'passwd' to achieve this (for Admin "
+"PIN case)."
+msgstr ""
+
+#: ../../start/linux/index.md:14
+msgid ""
+"Please be careful to change Admin PIN first and User PIN second! "
+"Otherwise the admin-less mode got activated, see this instructions for "
+"further information."
+msgstr ""
+
+#: ../../start/linux/index.md:15
+msgid ""
+"Optionally Reset code can be set up (guide). The minimum length accepted "
+"is 8 characters, however it should be as long as User PIN."
+msgstr ""
+
+#: ../../start/linux/index.md:16
+msgid ""
+"KDF-DO allows for a shorter PIN of 8 characters minimum, by executing "
+"part of the calculations on the PC. Please use greater length for the "
+"increased security."
+msgstr ""
+
+#: ../../start/linux/index.md:18
+msgid ""
+"Firmware version 1.2.5 or below: In case you forget a PIN or enter it "
+"wrongly three times you need the reset code to unblock the PIN. Otherwise"
+" the device wouldn't be usable anymore! Therefore please set the reset "
+"code as well when initialising the key!"
+msgstr ""
+
+#: ../../start/linux/index.md:20
+msgid ""
+"Your Nitrokey is now ready to use. Checkout the various use cases and "
+"supported applications."
+msgstr ""
+
+#: ../../start/linux/index.md:21
+msgid "Key Creation with OpenPGP or S/MIME"
+msgstr ""
+
+#: ../../start/linux/index.md:22
+msgid ""
+"There are two widely used standards for email encryption. While "
+"OpenPGP/GnuPG is popular among individuals, S/MIME/x.509 is mostly used "
+"by enterprises. If you are in doubt which one to choose, you should use "
+"OpenPGP."
+msgstr ""
+
+#: ../../start/linux/index.md:24
+msgid "instructions for using the OpenPGP standard with the Nitrokey"
+msgstr ""
+
+#: ../../start/linux/index.md:25
+msgid "instructions for using S/MIME with the Nitrokey"
+msgstr ""
+
+#: ../../start/linux/index.md:27
+msgid "Please note that the Nitrokey App can not be used for this device!"
+msgstr ""
+
+#: ../../start/linux/index.md:30
+msgid "Troubleshooting"
+msgstr ""
+
+#: ../../start/linux/index.md:31
+msgid ""
+"On some GNU/Linux systems it is necessary to insert the UDEV rules for "
+"the Nitrokey device manually. If you followed the above instructions and "
+"get the message:"
+msgstr ""
+
+#: ../../start/linux/index.md:35
+msgid ""
+"please install the Nitrokey App or type the following commands in the "
+"terminal to download and install the UDEV rules:"
+msgstr ""
+

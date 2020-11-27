@@ -1,0 +1,58 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Nitrokey
+# This file is distributed under the same license as the Nitrokey Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Nitrokey Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-11-27 17:16+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../x230/ubuntu/change-disk-encryption-passphrase.md:1
+msgid "Change Disk Encryption Passphrase"
+msgstr ""
+
+#: ../../x230/ubuntu/change-disk-encryption-passphrase.md:3
+msgid "To change the passphrase for disk encryption, first click on \"Activities\" in the upper left corner and enter \"disk\" in the search bar. Then select the \"Disks\" program that appears in the middle of the screen."
+msgstr ""
+
+#: ../../x230/ubuntu/change-disk-encryption-passphrase.md:5
+msgid "img1"
+msgstr ""
+
+#: ../../x230/ubuntu/change-disk-encryption-passphrase.md:7
+msgid "Select the field that says \"Luks\". Afterwards it should have an orange background."
+msgstr ""
+
+#: ../../x230/ubuntu/change-disk-encryption-passphrase.md:9
+msgid "img2"
+msgstr ""
+
+#: ../../x230/ubuntu/change-disk-encryption-passphrase.md:11
+msgid "Left click on the gears and select \"Change Passphrase\" from the context menu."
+msgstr ""
+
+#: ../../x230/ubuntu/change-disk-encryption-passphrase.md:13
+msgid "img3"
+msgstr ""
+
+#: ../../x230/ubuntu/change-disk-encryption-passphrase.md:15
+msgid "Enter \"PleaseChangeMe\" as the current passphrase and select a secure new one."
+msgstr ""
+
+#: ../../x230/ubuntu/change-disk-encryption-passphrase.md:17
+msgid "img4"
+msgstr ""
+
+#: ../../x230/ubuntu/change-disk-encryption-passphrase.md:19
+msgid "Enter the your account password."
+msgstr ""
+

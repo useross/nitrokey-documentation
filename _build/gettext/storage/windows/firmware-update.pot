@@ -1,0 +1,74 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Nitrokey
+# This file is distributed under the same license as the Nitrokey Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Nitrokey Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-11-27 17:16+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../storage/windows/firmware-update.md:1
+msgid "Firmware Update"
+msgstr ""
+
+#: ../../storage/windows/firmware-update.md:3
+msgid "::: danger Warning You should backup all data from the device before upgrading, as firmware upgrades may destroy all data on the device (especially coming from firmware version <0.45)! :::"
+msgstr ""
+
+#: ../../storage/windows/firmware-update.md:7
+msgid "img1"
+msgstr ""
+
+#: ../../storage/windows/firmware-update.md:9
+msgid "Required Software"
+msgstr ""
+
+#: ../../storage/windows/firmware-update.md:11
+msgid "Download the Nitrokey App and the Nitrokey Update Tool. The Nitrokey Update Tool is currently available for macOS and Windows only. For Updating on GNU/Linux please see below. Download the Latest Firmware"
+msgstr ""
+
+#: ../../storage/windows/firmware-update.md:14
+msgid "Download the latest firmware"
+msgstr ""
+
+#: ../../storage/windows/firmware-update.md:16
+msgid "Download the latest firmware.hex file from here. Older releases are here."
+msgstr ""
+
+#: ../../storage/windows/firmware-update.md:18
+msgid "Enable Firmware Update"
+msgstr ""
+
+#: ../../storage/windows/firmware-update.md:20
+msgid "If you are using Microsoft Windows Build 1809 and Nitrokey Storage Firmware 0.52 or lower, you need to use another system or if this is not feasible use these instructions to enable the Firmware Update mode."
+msgstr ""
+
+#: ../../storage/windows/firmware-update.md:22
+msgid "Set Nitrokey Storage into upgrade mode using the Nitrokey App. This may looks different on your system (see picture below). Generally right click on the icon of the Nitrokey App and go to \"Configure\" -> \"Enable Firmware Update\". The default firmware password is '12345678'."
+msgstr ""
+
+#: ../../storage/windows/firmware-update.md:24
+msgid "::: tip Note The Nitrokey is not detected by App anymore once update mode got activated. You have to proceed with the instructions described below to make it work again. :::"
+msgstr ""
+
+#: ../../storage/windows/firmware-update.md:28
+msgid "Update the Firmware with the Update Tool"
+msgstr ""
+
+#: ../../storage/windows/firmware-update.md:30
+msgid "Now start the previously download Nitrokey Update Tool. After clicking left on \"Select firmware file\" you can choose the previously downloaded .hex file. Please left click on \"Update firmware\" to start the update process. Your device should get detected by the Nitrokey App again as soon as the update is finished."
+msgstr ""
+
+#: ../../storage/windows/firmware-update.md:32
+msgid "img2"
+msgstr ""
+

@@ -1,0 +1,134 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Nitrokey
+# This file is distributed under the same license as the Nitrokey Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Nitrokey Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-11-27 17:16+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../storage/windows/windows-logon-and-smime-email-encryption-with-active-directory.md:1
+msgid "Windows Logon and S/MIME Email Encryption with Active Directory"
+msgstr ""
+
+#: ../../storage/windows/windows-logon-and-smime-email-encryption-with-active-directory.md:3
+msgid "Please note that this driver is still in development/testing. Please tell us your experiences! See our contact page."
+msgstr ""
+
+#: ../../storage/windows/windows-logon-and-smime-email-encryption-with-active-directory.md:5
+msgid "Prerequisites"
+msgstr ""
+
+#: ../../storage/windows/windows-logon-and-smime-email-encryption-with-active-directory.md:7
+msgid "This guide assumes that an Active Directory server with role 'Active Directory Certificate Services' is installed and running on a server. These instructions are based on Nitrokey Storage 2 and Nitrokey Pro 2 only."
+msgstr ""
+
+#: ../../storage/windows/windows-logon-and-smime-email-encryption-with-active-directory.md:9
+msgid "Installing OpenPGP-CSP"
+msgstr ""
+
+#: ../../storage/windows/windows-logon-and-smime-email-encryption-with-active-directory.md:11
+msgid "This step is needed for clients to use the OpenPGP-CSP driver. Download and install the latest version of the installer file 'SetupOpenPGPCsp' for your system architecture, for 'SetupOpenPGPCsp_x64.msi' for 64-bit systems."
+msgstr ""
+
+#: ../../storage/windows/windows-logon-and-smime-email-encryption-with-active-directory.md:13
+msgid "You may want to install the driver on the server as well for being able to enforce the use of this driver in the template (see below)."
+msgstr ""
+
+#: ../../storage/windows/windows-logon-and-smime-email-encryption-with-active-directory.md:15
+msgid "Creating Certificate Template on Server Side"
+msgstr ""
+
+#: ../../storage/windows/windows-logon-and-smime-email-encryption-with-active-directory.md:17
+msgid "On Active Directory Server open certsrv.msc to manage your certificate templates. Right click on 'Certificate Templates' and choose 'Manage'"
+msgstr ""
+
+#: ../../storage/windows/windows-logon-and-smime-email-encryption-with-active-directory.md:19
+msgid "img1"
+msgstr ""
+
+#: ../../storage/windows/windows-logon-and-smime-email-encryption-with-active-directory.md:21
+msgid "Now right click on 'Smartcard Logon' template and click 'Duplicate', to create a new template on basis of this standard template. Rename template to 'OpenPGP Card Logon and Email' or alike."
+msgstr ""
+
+#: ../../storage/windows/windows-logon-and-smime-email-encryption-with-active-directory.md:23
+msgid "img2"
+msgstr ""
+
+#: ../../storage/windows/windows-logon-and-smime-email-encryption-with-active-directory.md:25
+msgid "Under 'Request Handling', you can choose the OpenPGP-CSP as the one and only Cryptography Service Provider (click the Button labeled 'CSPs...'). For this to work, you need to install the driver on the server as well and you have to insert a Nitrokey beforehand. This is optional. You can let the user choose, which CSP to use."
+msgstr ""
+
+#: ../../storage/windows/windows-logon-and-smime-email-encryption-with-active-directory.md:27
+msgid "img3"
+msgstr ""
+
+#: ../../storage/windows/windows-logon-and-smime-email-encryption-with-active-directory.md:29
+msgid "img4"
+msgstr ""
+
+#: ../../storage/windows/windows-logon-and-smime-email-encryption-with-active-directory.md:31
+msgid "For enabling S/MIME email encryption go to 'Subject name'. Tick the checkbox 'E-Mail name' (note: You must save the mail addresses of your users in the corresponding Active Directory field!)."
+msgstr ""
+
+#: ../../storage/windows/windows-logon-and-smime-email-encryption-with-active-directory.md:33
+msgid "img5"
+msgstr ""
+
+#: ../../storage/windows/windows-logon-and-smime-email-encryption-with-active-directory.md:35
+msgid "Then go to 'Extensions', there you edit the applications guideline and add 'Secure Email'."
+msgstr ""
+
+#: ../../storage/windows/windows-logon-and-smime-email-encryption-with-active-directory.md:37
+msgid "img6"
+msgstr ""
+
+#: ../../storage/windows/windows-logon-and-smime-email-encryption-with-active-directory.md:39
+msgid "img7"
+msgstr ""
+
+#: ../../storage/windows/windows-logon-and-smime-email-encryption-with-active-directory.md:41
+msgid "Request Certificate on Client (Domain Member)"
+msgstr ""
+
+#: ../../storage/windows/windows-logon-and-smime-email-encryption-with-active-directory.md:43
+msgid "To request a certificate for a domain member, you have to open certmgr.msc. Right click on folder 'Personal->Certificates' and click 'All Tasks->Request New Certificate and choose the template you created on the AD."
+msgstr ""
+
+#: ../../storage/windows/windows-logon-and-smime-email-encryption-with-active-directory.md:45
+msgid "img8"
+msgstr ""
+
+#: ../../storage/windows/windows-logon-and-smime-email-encryption-with-active-directory.md:47
+msgid "If you did not enforce the usage of OpenPGP-CSP you have to choose it here now."
+msgstr ""
+
+#: ../../storage/windows/windows-logon-and-smime-email-encryption-with-active-directory.md:49
+msgid "img9"
+msgstr ""
+
+#: ../../storage/windows/windows-logon-and-smime-email-encryption-with-active-directory.md:51
+msgid "img10"
+msgstr ""
+
+#: ../../storage/windows/windows-logon-and-smime-email-encryption-with-active-directory.md:53
+msgid "Next you choose the Authentication slot for the certificate."
+msgstr ""
+
+#: ../../storage/windows/windows-logon-and-smime-email-encryption-with-active-directory.md:55
+msgid "You are now ready to logon on the computer with the Nitrokey instead of your password and you can use S/MIME email encryption/signing with the Nitrokey. The driver has to be installed on every computer you want to use the certificate on."
+msgstr ""
+
+#: ../../storage/windows/windows-logon-and-smime-email-encryption-with-active-directory.md:57
+msgid "img11"
+msgstr ""
+
