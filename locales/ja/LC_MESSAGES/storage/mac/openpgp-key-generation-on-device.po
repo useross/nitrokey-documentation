@@ -1,0 +1,206 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Nitrokey
+# This file is distributed under the same license as the Nitrokey
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Nitrokey Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-11-27 17:16+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../storage/mac/openpgp-key-generation-on-device.md:1
+msgid "OpenPGP Key Generation On-Device"
+msgstr ""
+
+#: ../../storage/mac/openpgp-key-generation-on-device.md:3
+msgid ""
+"The following instructions explain the generation of OpenPGP keys "
+"directly on the Nitrokey. This is done by using the command line "
+"interface of GnuPG. Thus, you need to have GnuPG installed on your "
+"system. The newest GnuPG version for Windows can be found here and the "
+"newest version for MacOS can be found here. Users of Linux systems please"
+" install GnuPG with help of the package manager."
+msgstr ""
+
+#: ../../storage/mac/openpgp-key-generation-on-device.md:5
+msgid ""
+"::: tip Note These instructions are based on GnuPG version 2.2.6 or "
+"higher. Some Linux Distributions have an older version installed. In this"
+" case please choose a different method as listed here or install a newer "
+"version if possible. :::"
+msgstr ""
+
+#: ../../storage/mac/openpgp-key-generation-on-device.md:9
+msgid "Key Generation"
+msgstr ""
+
+#: ../../storage/mac/openpgp-key-generation-on-device.md:11
+msgid ""
+"The following descriptions explain the basic key generation on-device via"
+" GnuPG's command line interface. The default behaviour is to generate RSA"
+" keys of 2048 bit size. If you want to change the key algorithm and "
+"length, have a look at the next section first."
+msgstr ""
+
+#: ../../storage/mac/openpgp-key-generation-on-device.md:13
+msgid "Open a command line and type gpg2 --card-edit."
+msgstr ""
+
+#: ../../storage/mac/openpgp-key-generation-on-device.md:15
+msgid ""
+"To open the Windows command line please push the Windows-key and R-key. "
+"Now type 'cmd.exe' in the text field and hit enter. To open a Terminal on"
+" macOS or GNU/Linux please use the application search (e.g. spotlight on "
+"macOS)."
+msgstr ""
+
+#: ../../storage/mac/openpgp-key-generation-on-device.md:43
+msgid ""
+"Now you are in the interactive interface of GnuPG. Activate the admin "
+"commands with admin and use generate afterwards to start the generation "
+"of keys."
+msgstr ""
+
+#: ../../storage/mac/openpgp-key-generation-on-device.md:85
+msgid ""
+"Please do not create the suggested off-card backup. This \"backup\" does "
+"only save the encryption key, but not the signature and authentication "
+"keys. In case of a loss of the device, you will not be able to restore "
+"the whole key set. So on the one hand it is no full backup (use these "
+"instructions instead, if you need one) and on the other hand you risk "
+"that someone else can get in possession of your encryption key. The "
+"advantage of generating keys on-device is to make sure that keys are "
+"stored securely. Therefore, we recommend to skip this half-backup."
+msgstr ""
+
+#: ../../storage/mac/openpgp-key-generation-on-device.md:87
+msgid ""
+"Now you have a complete key set on your device which can be used for the "
+"various applications listed on our site. Type quit and hit enter to exit."
+msgstr ""
+
+#: ../../storage/mac/openpgp-key-generation-on-device.md:89
+msgid "Change Key Attributes"
+msgstr ""
+
+#: ../../storage/mac/openpgp-key-generation-on-device.md:91
+msgid ""
+"This section is about changing the key attributes. If you want to use the"
+" default values, you can proceed with the next section."
+msgstr ""
+
+#: ../../storage/mac/openpgp-key-generation-on-device.md:93
+msgid "Open a command line and type gpg2 --card-edit --expert."
+msgstr ""
+
+#: ../../storage/mac/openpgp-key-generation-on-device.md:119
+msgid ""
+"Now you are in the interactive interface of GnuPG. As you can see in the "
+"\"Key attributes\" field above, the default value rsa2048 is set. To "
+"change them, activate the admin commands with admin and use key-attr "
+"afterwards to change the attributes of the keys."
+msgstr ""
+
+#: ../../storage/mac/openpgp-key-generation-on-device.md:149
+msgid ""
+"You can choose the attribute for each key (that is, signature, encryption"
+" and authentication key). Most people will use the same attributes for "
+"every key. Type list to see the results (have look at the \"Key "
+"attributes\" field, which now reads rsa4096)."
+msgstr ""
+
+#: ../../storage/mac/openpgp-key-generation-on-device.md:175
+msgid ""
+"Type quit and hit enter to exit or proceed directly with the previous "
+"section to actually generate the keys with the key attributes you just "
+"set."
+msgstr ""
+
+#: ../../storage/mac/openpgp-key-generation-on-device.md:177
+msgid ""
+"The following table illustrates which algorithm can be used on which "
+"device."
+msgstr ""
+
+#: ../../storage/mac/openpgp-key-generation-on-device.md:180
+msgid ""
+"|                 | Start           | Pro + Storage  | Pro 2 + Storage 2 "
+"| | --------------: |:---------------:| "
+"--------------:|------------------:| | rsa1024         |       ✓         "
+"|        ✓       |                   | | rsa2048         |       ✓"
+"         |        ✓       |         ✓         | | rsa3072         |"
+"                 |        ✓       |         ✓         | | rsa4096"
+"         |                 |        ✓       |         ✓         | | "
+"curve25519 (ECC)|       ✓         |                |                   | "
+"| NIST (ECC)      |       ✓         |                |         ✓         "
+"| | Brainpool (ECC) |                 |                |         ✓"
+"         | | secp256k1       |       ✓         |                |"
+"                   |"
+msgstr ""
+
+#: ../../storage/mac/openpgp-key-generation-on-device.md:191
+msgid "Exporting Public Key and Keyserver Usage"
+msgstr ""
+
+#: ../../storage/mac/openpgp-key-generation-on-device.md:193
+msgid ""
+"Although you can start to use your Nitrokey right away after generating "
+"the keys on your system, you need to import your public key on every "
+"system, you want to use the Nitrokey on. So to be prepared you have two "
+"options: You either save the public key anywhere you like and use it on "
+"another system or you save the public key on a webpage/keyserver."
+msgstr ""
+
+#: ../../storage/mac/openpgp-key-generation-on-device.md:195
+msgid "Generating a Public Key File"
+msgstr ""
+
+#: ../../storage/mac/openpgp-key-generation-on-device.md:197
+msgid ""
+"To get a simple file of your public key, you can just use gpg2 --armor "
+"--export keyID > pubkey.asc. Use either the fingerprint as \"keyID\" "
+"(look at gpg -K to get it) or just use your email address as an "
+"identifier."
+msgstr ""
+
+#: ../../storage/mac/openpgp-key-generation-on-device.md:199
+msgid ""
+"You can carry this file with you or send it to anyone who you like. This "
+"file is not secret at all. If you want to use the Nitrokey on another "
+"system, you first import this public key via gpg2 --import pubkey.asc and"
+" then types gpg2 --card-status so that the system knows where to look for"
+" this key. That's all."
+msgstr ""
+
+#: ../../storage/mac/openpgp-key-generation-on-device.md:201
+msgid "Uploading the Public Key"
+msgstr ""
+
+#: ../../storage/mac/openpgp-key-generation-on-device.md:203
+msgid ""
+"If you do not want to carry a public keyfile with you, you can upload it "
+"to keyserver. You can do this by typing gpg --keyserver "
+"search.keyserver.net --send-key keyID. If you are using another machine "
+"you can just import it by using gpg --keyserver search.keyserver.net "
+"--recv-key keyID."
+msgstr ""
+
+#: ../../storage/mac/openpgp-key-generation-on-device.md:205
+msgid ""
+"Another possibility is to change the URL setting on your card. Start gpg "
+"--card-edit again and first set the URL where the key is situated (e.g. "
+"on the keyserver or on your webpage etc.) via the url command. From now "
+"on you can import the key on another system by just using the fetch "
+"command within the gpg --card-edit environment."
+msgstr ""
+

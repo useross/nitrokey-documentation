@@ -1,0 +1,82 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Nitrokey
+# This file is distributed under the same license as the Nitrokey
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Nitrokey Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-11-27 17:16+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../pro/windows/index.md:1
+msgid "Nitrokey Pro, Windows"
+msgstr ""
+
+#: ../../pro/windows/index.md:3
+msgid "Getting Started"
+msgstr ""
+
+#: ../../pro/windows/index.md:5
+msgid ""
+"Connect your Nitrokey to your computer and confirm all dialogs so  that "
+"the USB smart card device driver gets installed almost  automatically. "
+"Windows may fail to install an additional device driver  for the smart "
+"card. Its safe to ignore this warning."
+msgstr ""
+
+#: ../../pro/windows/index.md:6
+msgid "Download and start the Nitrokey App."
+msgstr ""
+
+#: ../../pro/windows/index.md:7
+msgid ""
+"Go to \"Menu\" -> \"Configure\" to change the User PIN (default: 123456) "
+"and Admin PIN (default: 12345678) to your own choices."
+msgstr ""
+
+#: ../../pro/windows/index.md:9
+msgid "img"
+msgstr ""
+
+#: ../../pro/windows/index.md:11
+msgid ""
+"Your Nitrokey is now ready to use. Checkout the various use cases and "
+"supported applications."
+msgstr ""
+
+#: ../../pro/windows/index.md:13
+msgid ""
+"Note: For many use cases described, it is necessary to have either "
+"OpenPGP or S/MIME keys installed on the device (see below)."
+msgstr ""
+
+#: ../../pro/windows/index.md:15
+msgid "Key Creation with OpenPGP or S/MIME"
+msgstr ""
+
+#: ../../pro/windows/index.md:17
+msgid ""
+"There are two widely used standards for email encryption. While  "
+"OpenPGP/GnuPG is popular among individuals, S/MIME/x.509 is mostly used  "
+"by enterprises. If you are in doubt which one to choose, you should use  "
+"OpenPGP."
+msgstr ""
+
+#: ../../pro/windows/index.md:19
+msgid "instructions for using the OpenPGP standard with the Nitrokey"
+msgstr ""
+
+#: ../../pro/windows/index.md:20
+msgid "instructions for using S/MIME with the Nitrokey"
+msgstr ""
+

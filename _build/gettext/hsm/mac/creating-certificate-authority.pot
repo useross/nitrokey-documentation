@@ -1,0 +1,198 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Nitrokey
+# This file is distributed under the same license as the Nitrokey Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Nitrokey Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-11-27 17:16+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../hsm/mac/creating-certificate-authority.md:1
+msgid "Creating a Certificate Authority"
+msgstr ""
+
+#: ../../hsm/mac/creating-certificate-authority.md:3
+msgid "This article shows you how to setup your own private certificate authority backed by a Nitrokey HSM. This certificate authority has no automation and does not really scale. Other open source projects can be referenced for automation and scalability."
+msgstr ""
+
+#: ../../hsm/mac/creating-certificate-authority.md:5
+msgid "Choose Cryptographic Algorithms"
+msgstr ""
+
+#: ../../hsm/mac/creating-certificate-authority.md:7
+msgid "I'm going to assume that you're as paranoid as I am, so I will be using the following command for generating private keys:"
+msgstr ""
+
+#: ../../hsm/mac/creating-certificate-authority.md:13
+msgid "But, if you're less paranoid that I am, you can safely choose the following options:"
+msgstr ""
+
+#: ../../hsm/mac/creating-certificate-authority.md:20
+msgid "Likewise, I will be using the sha512 algorithm throughout this article, but sha256 can safely be used."
+msgstr ""
+
+#: ../../hsm/mac/creating-certificate-authority.md:22
+msgid "Preparing to Start"
+msgstr ""
+
+#: ../../hsm/mac/creating-certificate-authority.md:24
+msgid "To start with, you need to pick a directory to store your CA."
+msgstr ""
+
+#: ../../hsm/mac/creating-certificate-authority.md:35
+msgid "Install the necessary tools:"
+msgstr ""
+
+#: ../../hsm/mac/creating-certificate-authority.md:45
+msgid "Creating the Root Certificate Authority"
+msgstr ""
+
+#: ../../hsm/mac/creating-certificate-authority.md:47
+msgid "We start by generating the private key for the certificate authority directly on the Nitrokey HSM. This allows us to use the private key in the future, but not access it."
+msgstr ""
+
+#: ../../hsm/mac/creating-certificate-authority.md:70
+msgid "Note the ID number (e0161cc8b6f5d66ac6835ecdecb623fc0506a675), we'll need it later."
+msgstr ""
+
+#: ../../hsm/mac/creating-certificate-authority.md:72
+#: ../../hsm/mac/creating-certificate-authority.md:226
+msgid "If you need the ID in the future, you can list the keys on the Nitrokey HSM:"
+msgstr ""
+
+#: ../../hsm/mac/creating-certificate-authority.md:78
+#: ../../hsm/mac/creating-certificate-authority.md:232
+msgid "We need to create a config file to generate a self-signed public certificate."
+msgstr ""
+
+#: ../../hsm/mac/creating-certificate-authority.md:84
+#: ../../hsm/mac/creating-certificate-authority.md:238
+msgid "Fill out the request information in <angle brackets> with information for your CA."
+msgstr ""
+
+#: ../../hsm/mac/creating-certificate-authority.md:144
+msgid "Generate the self-signed public certificate from the private key. Use the private key id value from earlier."
+msgstr ""
+
+#: ../../hsm/mac/creating-certificate-authority.md:152
+msgid "Verify that the root certificate was generated correctly. Verify that Signature-Algorithm matches above and below. Verify that Issuer and Subject match, all root certificates are self signed. Verify that Key Usage matches what was in the v3_ca information in our config file."
+msgstr ""
+
+#: ../../hsm/mac/creating-certificate-authority.md:199
+msgid "Creating the Intermediate Certificate Authority"
+msgstr ""
+
+#: ../../hsm/mac/creating-certificate-authority.md:201
+msgid "We continue by generating the private key for the intermediate certificate authority directly on the Nitrokey HSM. This allows us to use the private key in the future, but not access it."
+msgstr ""
+
+#: ../../hsm/mac/creating-certificate-authority.md:224
+msgid "Note the ID number (bcb48fe9b566ae61891aabbfde6a23d4ff3ab639), we'll need it later."
+msgstr ""
+
+#: ../../hsm/mac/creating-certificate-authority.md:265
+msgid "Generate the certificate signing request for the intermediate CA from the intermediate CA's private key. Use the private key ID value from earlier."
+msgstr ""
+
+#: ../../hsm/mac/creating-certificate-authority.md:273
+msgid "Verify that the CSR was created correctly. Verify that your Subject is correct. Verify that your Public Key and Signature Algorithm are correct."
+msgstr ""
+
+#: ../../hsm/mac/creating-certificate-authority.md:306
+#: ../../hsm/mac/creating-certificate-authority.md:506
+msgid "We need to find out the fully qualified PKCS#11 URI for your private key:"
+msgstr ""
+
+#: ../../hsm/mac/creating-certificate-authority.md:344
+msgid "In this instance, the fully qualified PKCS#11 URI is pkcs11:model=PKCS%2315%20emulated;manufacturer=www.CardContact.de;serial=DENK0104068;token=SmartCard-HSM%20%28UserPIN%29%00%00%00%00%00%00%00%00%00;id=%E0%16%1C%C8%B6%F5%D6%6A%C6%83%5E%CD%EC%B6%23%FC%05%06%A6%75;object=root;type=private."
+msgstr ""
+
+#: ../../hsm/mac/creating-certificate-authority.md:346
+msgid "Now, we need to create a config file to use the private key of the root certificate to sign the csr of the intermediate certificate."
+msgstr ""
+
+#: ../../hsm/mac/creating-certificate-authority.md:398
+msgid "Then sign the intermediate certificate with the root certificate."
+msgstr ""
+
+#: ../../hsm/mac/creating-certificate-authority.md:438
+msgid "Verify that the root certificate was generated correctly. Verify that the Issuer and Subject are different, and correct. Verify that the Key Usage matches the config file. Verify that the signature algorithm are correct above and below."
+msgstr ""
+
+#: ../../hsm/mac/creating-certificate-authority.md:485
+msgid "Verify that the intermediate certificate verifies against the root certificate."
+msgstr ""
+
+#: ../../hsm/mac/creating-certificate-authority.md:492
+msgid "Create a certificate chain file:"
+msgstr ""
+
+#: ../../hsm/mac/creating-certificate-authority.md:498
+msgid "You now have a certificate authority backed by an HSM."
+msgstr ""
+
+#: ../../hsm/mac/creating-certificate-authority.md:500
+msgid "Sign a Server Certificate"
+msgstr ""
+
+#: ../../hsm/mac/creating-certificate-authority.md:502
+msgid "Now that you have a certificate authority, you'd probably like to know how to use it."
+msgstr ""
+
+#: ../../hsm/mac/creating-certificate-authority.md:504
+msgid "Create a CSR in the normal method for your application. Proper creation of your certificate, including SAN, for your particular application is outside the scope of this document."
+msgstr ""
+
+#: ../../hsm/mac/creating-certificate-authority.md:544
+msgid "In this instance, the fully qualified PKCS#11 URI is pkcs11:model=PKCS%2315%20emulated;manufacturer=www.CardContact.de;serial=DENK0104068;token=SmartCard-HSM%20%28UserPIN%29%00%00%00%00%00%00%00%00%00;id=%BC%B4%8F%E9%B5%66%AE%61%89%1A%AB%BF%DE%6A%23%D4%FF%3A%B6%39;object=intermediate;type=private."
+msgstr ""
+
+#: ../../hsm/mac/creating-certificate-authority.md:546
+msgid "Create a config file to use the private key of the intermediate certificate to sign the CSRs of your servers."
+msgstr ""
+
+#: ../../hsm/mac/creating-certificate-authority.md:601
+msgid "Then run openssl to sign the server's CSR."
+msgstr ""
+
+#: ../../hsm/mac/creating-certificate-authority.md:649
+msgid "References"
+msgstr ""
+
+#: ../../hsm/mac/creating-certificate-authority.md:651
+msgid "I used the following resources to help in compiling this document."
+msgstr ""
+
+#: ../../hsm/mac/creating-certificate-authority.md:653
+msgid "How to initialize your Nitrokey HSM"
+msgstr ""
+
+#: ../../hsm/mac/creating-certificate-authority.md:654
+msgid "How to create a root and intermediate CA"
+msgstr ""
+
+#: ../../hsm/mac/creating-certificate-authority.md:655
+msgid "How to ensure the serial numbers of your intermediate CA and server certs are up to spec"
+msgstr ""
+
+#: ../../hsm/mac/creating-certificate-authority.md:656
+msgid "How to generate ECC private keys"
+msgstr ""
+
+#: ../../hsm/mac/creating-certificate-authority.md:657
+msgid "How to find the PCKS11 URI from your HSM"
+msgstr ""
+
+#: ../../hsm/mac/creating-certificate-authority.md:659
+msgid "This document was originally written by lyntux."
+msgstr ""
+

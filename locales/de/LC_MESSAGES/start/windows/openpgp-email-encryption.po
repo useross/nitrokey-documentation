@@ -1,0 +1,127 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Nitrokey
+# This file is distributed under the same license as the Nitrokey
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Nitrokey Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-11-27 17:16+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../start/windows/openpgp-email-encryption.md:1
+msgid "OpenPGP Email Encryption"
+msgstr ""
+
+#: ../../start/windows/openpgp-email-encryption.md:3
+msgid "There are two widely used standards for email encryption."
+msgstr ""
+
+#: ../../start/windows/openpgp-email-encryption.md:5
+msgid "OpenPGP/GnuPG is popular among individuals,"
+msgstr ""
+
+#: ../../start/windows/openpgp-email-encryption.md:6
+msgid "S/MIME/X.509 is mostly used by enterprises."
+msgstr ""
+
+#: ../../start/windows/openpgp-email-encryption.md:8
+msgid ""
+"If you are in doubt which one to choose, you should use OpenPGP. While "
+"this page describes the usage of OpenPGP, S/MIME is described here."
+msgstr ""
+
+#: ../../start/windows/openpgp-email-encryption.md:10
+msgid ""
+"Please familiarize yourself with the general concept behind the OpenPGP "
+"standard first, for example by reading this info graphic of the Free "
+"Software Foundation."
+msgstr ""
+
+#: ../../start/windows/openpgp-email-encryption.md:12
+msgid "Key Generation"
+msgstr ""
+
+#: ../../start/windows/openpgp-email-encryption.md:14
+msgid "If you do not have OpenPGP keys yet, you need to generate them first."
+msgstr ""
+
+#: ../../start/windows/openpgp-email-encryption.md:16
+msgid ""
+"Generate keys on Nitrokey - this is the best option if you are "
+"unexperienced, but you won't have a backup of your keys and therefore "
+"won't be able to mitigate the loss of the Nitrokey"
+msgstr ""
+
+#: ../../start/windows/openpgp-email-encryption.md:17
+msgid ""
+"Generate keys on Nitrokey with different algorithm or key size - this is "
+"as secure as the previous option and thus you won't have a  backup as "
+"well, but you can change the key attributes (that is the  algorithm and "
+"key size)"
+msgstr ""
+
+#: ../../start/windows/openpgp-email-encryption.md:18
+msgid ""
+"Generate keys locally and copy them to Nitrokey - this is the most "
+"flexible, expert option,  but only secure if your system is not "
+"compromised, because you can  create a backup key outside your Nitrokey A"
+" similar description in french can be found here."
+msgstr ""
+
+#: ../../start/windows/openpgp-email-encryption.md:21
+msgid "Importing Existing Keys"
+msgstr ""
+
+#: ../../start/windows/openpgp-email-encryption.md:23
+msgid ""
+"If you already have OpenPGP keys you may want to use them with your  "
+"Nitrokey, instead of generating new ones. Importing exsiting keys works  "
+"basically the same as generating keys locally first and copy them to the "
+"Nitrokey (see above). Therefore, please have a look at the corresponding "
+"instructions. Note that you probably want to generate another subkey for"
+"  authentication to your existing key. See at the same instructions for "
+"subkey generation."
+msgstr ""
+
+#: ../../start/windows/openpgp-email-encryption.md:25
+msgid "Usage"
+msgstr ""
+
+#: ../../start/windows/openpgp-email-encryption.md:27
+msgid "You can find further information about the usage on these pages:"
+msgstr ""
+
+#: ../../start/windows/openpgp-email-encryption.md:29
+msgid "for using OpenPGP encryption with Thunderbird"
+msgstr ""
+
+#: ../../start/windows/openpgp-email-encryption.md:30
+msgid "for using OpenPGP encryption with Outlook"
+msgstr ""
+
+#: ../../start/windows/openpgp-email-encryption.md:31
+msgid ""
+"for using Claws Mail, an email client (and news reader) for Linux and "
+"Windows"
+msgstr ""
+
+#: ../../start/windows/openpgp-email-encryption.md:32
+msgid ""
+"for using Evolution, an email client for the Gnome Desktop on Linux "
+"systems"
+msgstr ""
+
+#: ../../start/windows/openpgp-email-encryption.md:33
+msgid "for using GPGTools on macOS."
+msgstr ""
+

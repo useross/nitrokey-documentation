@@ -1,0 +1,127 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Nitrokey
+# This file is distributed under the same license as the Nitrokey
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Nitrokey Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-11-27 17:16+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../pro/mac/login-with-eidauthenticate-on-stand-alone-windows-computers.md:1
+msgid "Login With EIDAuthenticate on Stand Alone Windows Computers"
+msgstr ""
+
+#: ../../pro/mac/login-with-eidauthenticate-on-stand-alone-windows-computers.md:3
+msgid ""
+"Download and install the latest version of OpenSC. Please install the "
+"OpenPGP-CSP driver instead if using Nitrokey Storage 2 or Nitrokey Pro 2."
+msgstr ""
+
+#: ../../pro/mac/login-with-eidauthenticate-on-stand-alone-windows-computers.md:4
+msgid ""
+"Download and install EIDAuthenticate. Note: The free community edition is"
+" disabled. You may test the enterprise edition instead."
+msgstr ""
+
+#: ../../pro/mac/login-with-eidauthenticate-on-stand-alone-windows-computers.md:5
+msgid "Start EIDConfigurationWizard.exe"
+msgstr ""
+
+#: ../../pro/mac/login-with-eidauthenticate-on-stand-alone-windows-computers.md:6
+msgid "Select \"Associate a new certificate\""
+msgstr ""
+
+#: ../../pro/mac/login-with-eidauthenticate-on-stand-alone-windows-computers.md:8
+msgid "img1"
+msgstr ""
+
+#: ../../pro/mac/login-with-eidauthenticate-on-stand-alone-windows-computers.md:10
+msgid ""
+"Select or generate a Certificate Authority which should issue the user's "
+"certificate on the Nitrokey."
+msgstr ""
+
+#: ../../pro/mac/login-with-eidauthenticate-on-stand-alone-windows-computers.md:12
+msgid "img2"
+msgstr ""
+
+#: ../../pro/mac/login-with-eidauthenticate-on-stand-alone-windows-computers.md:14
+msgid ""
+"Enter the user PIN which you defined previously in step 4. Wait a moment "
+"until a new keypair and certificate are generated. In case your Nitrokey "
+"is not detected you may want to execute \"certutil -scinfo\" for "
+"troubleshooting."
+msgstr ""
+
+#: ../../pro/mac/login-with-eidauthenticate-on-stand-alone-windows-computers.md:17
+msgid "img3"
+msgstr ""
+
+#: ../../pro/mac/login-with-eidauthenticate-on-stand-alone-windows-computers.md:19
+msgid "Select the newly generated certificate and press continue."
+msgstr ""
+
+#: ../../pro/mac/login-with-eidauthenticate-on-stand-alone-windows-computers.md:21
+msgid "img4"
+msgstr ""
+
+#: ../../pro/mac/login-with-eidauthenticate-on-stand-alone-windows-computers.md:23
+msgid "All checks should succeed. Press continue."
+msgstr ""
+
+#: ../../pro/mac/login-with-eidauthenticate-on-stand-alone-windows-computers.md:25
+msgid "img5"
+msgstr ""
+
+#: ../../pro/mac/login-with-eidauthenticate-on-stand-alone-windows-computers.md:27
+msgid "Enter the password of your user account."
+msgstr ""
+
+#: ../../pro/mac/login-with-eidauthenticate-on-stand-alone-windows-computers.md:29
+msgid "img6"
+msgstr ""
+
+#: ../../pro/mac/login-with-eidauthenticate-on-stand-alone-windows-computers.md:31
+msgid "Enter the user PIN which you defined previously in step 4."
+msgstr ""
+
+#: ../../pro/mac/login-with-eidauthenticate-on-stand-alone-windows-computers.md:33
+msgid "img7"
+msgstr ""
+
+#: ../../pro/mac/login-with-eidauthenticate-on-stand-alone-windows-computers.md:35
+msgid "The final screen may look like this."
+msgstr ""
+
+#: ../../pro/mac/login-with-eidauthenticate-on-stand-alone-windows-computers.md:37
+msgid "img8"
+msgstr ""
+
+#: ../../pro/mac/login-with-eidauthenticate-on-stand-alone-windows-computers.md:39
+msgid ""
+"You may perform further configurations such as activate the force smart "
+"card policy or automatically lock the computer when removing the Nitrokey"
+" (by using EIDConfigurationWizardElevated.exe)."
+msgstr ""
+
+#: ../../pro/mac/login-with-eidauthenticate-on-stand-alone-windows-computers.md:41
+msgid ""
+"From now on, when logging on to your Windows computer you need to connect"
+" the Nitrokey and enter your PIN."
+msgstr ""
+
+#: ../../pro/mac/login-with-eidauthenticate-on-stand-alone-windows-computers.md:43
+msgid "img9"
+msgstr ""
+

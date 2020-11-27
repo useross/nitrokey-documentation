@@ -61,7 +61,7 @@ master_doc = 'index'
 language = 'en'
 
 # Directories in which to search for additional message catalogs, relative to the source directory. The directories on this path are searched by the standard gettext module.
-locale_dirs = ['locales']
+locale_dirs = ['locales/']
 
 
 # Weblate Hack to only have one pot file
@@ -76,8 +76,7 @@ sphinx.transforms.i18n.docname_to_domain = (
 # If true, a document’s text domain is its docname if it is a top-level project file and its very base directory otherwise.
 # If set to string, all document’s text domain is this string, making all documents use single text domain.
 # By default, the document markup/code.rst ends up in the markup text domain. With this option set to False, it is markup/code.
-gettext_compact = 'nitrokeydomain'
-# for weblate string is used, to have only one pot-file
+gettext_compact = False 
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.

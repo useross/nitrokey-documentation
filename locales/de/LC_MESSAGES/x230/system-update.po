@@ -1,0 +1,142 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Nitrokey
+# This file is distributed under the same license as the Nitrokey
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Nitrokey Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-11-27 17:16+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../x230/system-update.md:1
+msgid "System update"
+msgstr ""
+
+#: ../../x230/system-update.md:3
+msgid ""
+"The NitroPad watches for changes to important system files to detect "
+"third-party tampering. This means that special steps are sometimes "
+"necessary when updating the system. This can often be recognized by the "
+"fact that the system prompts you to reboot."
+msgstr ""
+
+#: ../../x230/system-update.md:4
+msgid "Procedure After a System Update"
+msgstr ""
+
+#: ../../x230/system-update.md:6
+msgid "Boot Hash Mismatch"
+msgstr ""
+
+#: ../../x230/system-update.md:8
+msgid ""
+"If you restart the NitroPad after an update, the startup screen should "
+"initially appear as usual without an error message."
+msgstr ""
+
+#: ../../x230/system-update.md:10
+msgid "img1"
+msgstr ""
+
+#: ../../x230/system-update.md:12
+msgid ""
+"If you press Enter afterwards, you will get an error message that looks "
+"like this or similar:"
+msgstr ""
+
+#: ../../x230/system-update.md:14
+msgid "img2"
+msgstr ""
+
+#: ../../x230/system-update.md:16
+msgid ""
+"Confirm the message with Enter to have the files changed by the system "
+"update verified. Afterwards you will be asked again for a confirmation."
+msgstr ""
+
+#: ../../x230/system-update.md:18
+msgid "img3"
+msgstr ""
+
+#: ../../x230/system-update.md:20
+msgid ""
+"Now insert the Nitrokey if this is not already the case and confirm with "
+"Enter. Then you must enter the User PIN of the Nitrokey (default: "
+"123456). You will not see the characters you typed in on the screen."
+msgstr ""
+
+#: ../../x230/system-update.md:22
+msgid ""
+"Important: Heads expects an English keyboard layout, on which e.g. \"y\" "
+"and \"z\" are swapped in comparison to the German keyboard layout. If you"
+" agree with the default selection (which is written in capital letter) "
+"you can also simply confirm by pressing Enter."
+msgstr ""
+
+#: ../../x230/system-update.md:37
+msgid "Now the NitroPad marks the files changed by the update as verified."
+msgstr ""
+
+#: ../../x230/system-update.md:39
+msgid "Boot Entry Has Changed"
+msgstr ""
+
+#: ../../x230/system-update.md:41
+msgid ""
+"Next, either another error message appears or the operating system "
+"starts. This depends on the system update. If the following error message"
+" appears, proceeds as described below:"
+msgstr ""
+
+#: ../../x230/system-update.md:43
+msgid "img4"
+msgstr ""
+
+#: ../../x230/system-update.md:45
+msgid ""
+"First confirm the error message shown above. Then we see a list of all "
+"possible boat entries - choose the first one by simply pressing Enter."
+msgstr ""
+
+#: ../../x230/system-update.md:47
+msgid "img5"
+msgstr ""
+
+#: ../../x230/system-update.md:49
+msgid ""
+"To save this value as default, select the option \"Make Ubuntu the "
+"default\" for Ubuntu or \"Make Qubes the default\" for Qubes OS in the "
+"next window."
+msgstr ""
+
+#: ../../x230/system-update.md:51
+msgid "img6"
+msgstr ""
+
+#: ../../x230/system-update.md:53
+msgid ""
+"Now the Nitrokey has to be plugged in, if this is not yet the case. "
+"Confirm the next three questions with Enter and enter the User PIN of the"
+" Nitrokey if prompted (default: 123456)."
+msgstr ""
+
+#: ../../x230/system-update.md:55
+msgid ""
+"Important: Heads expects an English keyboard layout, on which e.g. \"y\" "
+"and \"z\" are swapped in comparison to the German keyboard layout."
+msgstr ""
+
+#: ../../x230/system-update.md:74
+msgid "Your system will then boot."
+msgstr ""
+

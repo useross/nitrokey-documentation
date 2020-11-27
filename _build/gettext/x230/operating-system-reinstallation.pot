@@ -1,0 +1,67 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Nitrokey
+# This file is distributed under the same license as the Nitrokey Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Nitrokey Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-11-27 17:16+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../x230/operating-system-reinstallation.md:1
+msgid "Operating System Reinstallation"
+msgstr ""
+
+#: ../../x230/operating-system-reinstallation.md:3
+#: ../../x230/operating-system-reinstallation.md:24
+msgid "::: danger Warning Booting this USB drive entirely erases all data on the hard disk or SSD of the NitroPad without further warning. Don't boot this USB drive on any computer which contains data you want to keep. Make sure to format the USB drive after the intended use. :::"
+msgstr ""
+
+#: ../../x230/operating-system-reinstallation.md:7
+msgid "Download one of the operating system images: Ubuntu Linux, Qubes OS (English, German), Linux Mint"
+msgstr ""
+
+#: ../../x230/operating-system-reinstallation.md:9
+msgid "Optional: Download hash sum and verify the downloaded operating system image: Ubuntu Linux, Qubes OS (English, German), Linux Mint"
+msgstr ""
+
+#: ../../x230/operating-system-reinstallation.md:11
+msgid "Write the operating system image to any USB drive. Possible applications:"
+msgstr ""
+
+#: ../../x230/operating-system-reinstallation.md:12
+msgid "Windows: Rufus, balenaEtcher;"
+msgstr ""
+
+#: ../../x230/operating-system-reinstallation.md:13
+msgid "Linux: dd, balenaEtcher;"
+msgstr ""
+
+#: ../../x230/operating-system-reinstallation.md:14
+msgid "macOS: dd, balenaEtcher."
+msgstr ""
+
+#: ../../x230/operating-system-reinstallation.md:16
+msgid "Connect the USB drive to your NitroPad and start it. In Heads menu select Boot Options -> USB Boot."
+msgstr ""
+
+#: ../../x230/operating-system-reinstallation.md:18
+msgid "Depending on the operating system you may need to confirm its reinstallation."
+msgstr ""
+
+#: ../../x230/operating-system-reinstallation.md:20
+msgid "Sign the boot partition."
+msgstr ""
+
+#: ../../x230/operating-system-reinstallation.md:22
+msgid "To avoid accidential overwriting of valuable data, format the USB drive afterwards."
+msgstr ""
+

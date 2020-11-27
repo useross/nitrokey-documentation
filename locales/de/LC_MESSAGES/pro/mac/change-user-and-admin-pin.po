@@ -1,0 +1,103 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2020, Nitrokey
+# This file is distributed under the same license as the Nitrokey
+# Documentation package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Nitrokey Documentation \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-11-27 17:16+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.6.0\n"
+
+#: ../../pro/mac/change-user-and-admin-pin.md:1
+msgid "Change User and Admin PIN"
+msgstr ""
+
+#: ../../pro/mac/change-user-and-admin-pin.md:3
+msgid "User PIN"
+msgstr ""
+
+#: ../../pro/mac/change-user-and-admin-pin.md:5
+msgid ""
+"The user PIN is at least 6-digits long and is used to get access to the "
+"contect of the Nitrokey. This is the PIN you will use a lot in every day "
+"use e.g. for decrypting messages, for unlocking your encrypted storage "
+"(NK Storage only) etc."
+msgstr ""
+
+#: ../../pro/mac/change-user-and-admin-pin.md:7
+msgid ""
+"You can change the user PIN with the Nitrokey App if using a Nitrokey Pro"
+" or Nitrokey Storage. In the Nitrokey App open 'Menu -> Configure -> "
+"Change User PIN' to open the dialog to change the PIN."
+msgstr ""
+
+#: ../../pro/mac/change-user-and-admin-pin.md:9
+msgid "img1"
+msgstr ""
+
+#: ../../pro/mac/change-user-and-admin-pin.md:11
+msgid "You can change the User PIN in the dialog window now."
+msgstr ""
+
+#: ../../pro/mac/change-user-and-admin-pin.md:13
+msgid ""
+"The user PIN can have up to 20 digits and other characters (e.g. "
+"alphabetic and special characters). But as the user PIN is blocked as "
+"soon three wrong PIN attempts were done, it is sufficiently secure to "
+"only have a 6 digits PIN. The default PIN is 123456."
+msgstr ""
+
+#: ../../pro/mac/change-user-and-admin-pin.md:15
+msgid "img2"
+msgstr ""
+
+#: ../../pro/mac/change-user-and-admin-pin.md:17
+msgid "Admin PIN"
+msgstr ""
+
+#: ../../pro/mac/change-user-and-admin-pin.md:19
+msgid ""
+"The admin PIN is at least 8-digits long and is used to change "
+"contents/settings of the Nitrokey. That is to say after initializing the "
+"Nitrokey you probably won't need this PIN too often (e.g. if you want to "
+"add another password to the password safe of the Nitrokey Pro or Nitrokey"
+" Storage)."
+msgstr ""
+
+#: ../../pro/mac/change-user-and-admin-pin.md:21
+msgid ""
+"You can change the admin PIN with the Nitrokey App if using a Nitrokey "
+"Pro or Nitrokey Storage. In the Nitrokey App open 'Menu -> Configure -> "
+"Change Admin PIN' to open the dialog to change the PIN."
+msgstr ""
+
+#: ../../pro/mac/change-user-and-admin-pin.md:23
+msgid "img3"
+msgstr ""
+
+#: ../../pro/mac/change-user-and-admin-pin.md:25
+msgid "You can change the admin PIN in the dialog window now."
+msgstr ""
+
+#: ../../pro/mac/change-user-and-admin-pin.md:27
+msgid ""
+"The admin PIN can have up to 20 digits and other characters (e.g. "
+"alphabetic and special characters). But as the admin PIN is blocked as "
+"soon three wrong PIN attempts were done, it is sufficiently secure to "
+"only have 8 digits PIN. The default PIN is 12345678."
+msgstr ""
+
+#: ../../pro/mac/change-user-and-admin-pin.md:29
+msgid "img4"
+msgstr ""
+
