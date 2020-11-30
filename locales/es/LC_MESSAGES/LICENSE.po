@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Nitrokey Documentation \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-30 17:14+0100\n"
+"POT-Creation-Date: 2020-11-30 17:40+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,15 +18,15 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.6.0\n"
 
-#: ../../LICENSE.md:1
+#: ../LICENSE.md:1
 msgid "Attribution-NonCommercial 4.0 International"
 msgstr ""
 
-#: ../../LICENSE.md:3 ../../LICENSE.md:55 ../../LICENSE.md:388
+#: ../LICENSE.md:3 ../LICENSE.md:55 ../LICENSE.md:388
 msgid "======================================================================="
 msgstr ""
 
-#: ../../LICENSE.md:5
+#: ../LICENSE.md:5
 msgid ""
 "Creative Commons Corporation (\"Creative Commons\") is not a law firm and"
 " does not provide legal services or legal advice. Distribution of "
@@ -39,11 +39,11 @@ msgid ""
 "fullest extent possible."
 msgstr ""
 
-#: ../../LICENSE.md:15
+#: ../LICENSE.md:15
 msgid "Using Creative Commons Public Licenses"
 msgstr ""
 
-#: ../../LICENSE.md:17
+#: ../LICENSE.md:17
 msgid ""
 "Creative Commons public licenses provide a standard set of terms and "
 "conditions that creators and other rights holders may use to share "
@@ -53,13 +53,13 @@ msgid ""
 "and do not form part of our licenses."
 msgstr ""
 
-#: ../../LICENSE.md:57
+#: ../LICENSE.md:57
 msgid ""
 "Creative Commons Attribution-NonCommercial 4.0 International Public "
 "License"
 msgstr ""
 
-#: ../../LICENSE.md:60
+#: ../LICENSE.md:60
 msgid ""
 "By exercising the Licensed Rights (defined below), You accept and agree "
 "to be bound by the terms and conditions of this Creative Commons "
@@ -71,11 +71,11 @@ msgid ""
 "making the Licensed Material available under these terms and conditions."
 msgstr ""
 
-#: ../../LICENSE.md:71
+#: ../LICENSE.md:71
 msgid "Section 1 -- Definitions."
 msgstr ""
 
-#: ../../LICENSE.md:73
+#: ../LICENSE.md:73
 msgid ""
 "a. Adapted Material means material subject to Copyright and Similar "
 "Rights that is derived from or based upon the Licensed Material and in "
@@ -88,14 +88,14 @@ msgid ""
 "image."
 msgstr ""
 
-#: ../../LICENSE.md:83
+#: ../LICENSE.md:83
 msgid ""
 "b. Adapter's License means the license You apply to Your Copyright and "
 "Similar Rights in Your contributions to Adapted Material in accordance "
 "with the terms and conditions of this Public License."
 msgstr ""
 
-#: ../../LICENSE.md:87
+#: ../LICENSE.md:87
 msgid ""
 "c. Copyright and Similar Rights means copyright and/or similar rights "
 "closely related to copyright including, without limitation, performance, "
@@ -109,20 +109,20 @@ msgid ""
 "international agreements."
 msgstr ""
 
-#: ../../LICENSE.md:100
+#: ../LICENSE.md:100
 msgid ""
 "e. Exceptions and Limitations means fair use, fair dealing, and/or any "
 "other exception or limitation to Copyright and Similar Rights that "
 "applies to Your use of the Licensed Material."
 msgstr ""
 
-#: ../../LICENSE.md:104
+#: ../LICENSE.md:104
 msgid ""
 "f. Licensed Material means the artistic or literary work, database, or "
 "other material to which the Licensor applied this Public License."
 msgstr ""
 
-#: ../../LICENSE.md:108
+#: ../LICENSE.md:108
 msgid ""
 "g. Licensed Rights means the rights granted to You subject to the terms "
 "and conditions of this Public License, which are limited to all Copyright"
@@ -130,13 +130,13 @@ msgid ""
 "that the Licensor has authority to license."
 msgstr ""
 
-#: ../../LICENSE.md:113
+#: ../LICENSE.md:113
 msgid ""
 "h. Licensor means the individual(s) or entity(ies) granting rights under "
 "this Public License."
 msgstr ""
 
-#: ../../LICENSE.md:116
+#: ../LICENSE.md:116
 msgid ""
 "i. NonCommercial means not primarily intended for or directed towards "
 "commercial advantage or monetary compensation. For purposes of this "
@@ -146,7 +146,7 @@ msgid ""
 "compensation in connection with the exchange."
 msgstr ""
 
-#: ../../LICENSE.md:124
+#: ../LICENSE.md:124
 msgid ""
 "j. Share means to provide material to the public by any means or process "
 "that requires permission under the Licensed Rights, such as reproduction,"
@@ -156,7 +156,7 @@ msgid ""
 "material from a place and at a time individually chosen by them."
 msgstr ""
 
-#: ../../LICENSE.md:132
+#: ../LICENSE.md:132
 msgid ""
 "k. Sui Generis Database Rights means rights other than copyright "
 "resulting from Directive 96/9/EC of the European Parliament and of the "
@@ -165,56 +165,56 @@ msgid ""
 "anywhere in the world."
 msgstr ""
 
-#: ../../LICENSE.md:138
+#: ../LICENSE.md:138
 msgid ""
 "l. You means the individual or entity exercising the Licensed Rights "
 "under this Public License. Your has a corresponding meaning."
 msgstr ""
 
-#: ../../LICENSE.md:142
+#: ../LICENSE.md:142
 msgid "Section 2 -- Scope."
 msgstr ""
 
-#: ../../LICENSE.md:144
+#: ../LICENSE.md:144
 msgid "a. License grant."
 msgstr ""
 
-#: ../../LICENSE.md:199
+#: ../LICENSE.md:199
 msgid "b. Other rights."
 msgstr ""
 
-#: ../../LICENSE.md:222
+#: ../LICENSE.md:222
 msgid "Section 3 -- License Conditions."
 msgstr ""
 
-#: ../../LICENSE.md:224
+#: ../LICENSE.md:224
 msgid ""
 "Your exercise of the Licensed Rights is expressly made subject to the "
 "following conditions."
 msgstr ""
 
-#: ../../LICENSE.md:227
+#: ../LICENSE.md:227
 msgid "a. Attribution."
 msgstr ""
 
-#: ../../LICENSE.md:274
+#: ../LICENSE.md:274
 msgid "Section 4 -- Sui Generis Database Rights."
 msgstr ""
 
-#: ../../LICENSE.md:276
+#: ../LICENSE.md:276
 msgid ""
 "Where the Licensed Rights include Sui Generis Database Rights that apply "
 "to Your use of the Licensed Material:"
 msgstr ""
 
-#: ../../LICENSE.md:279
+#: ../LICENSE.md:279
 msgid ""
 "a. for the avoidance of doubt, Section 2(a)(1) grants You the right to "
 "extract, reuse, reproduce, and Share all or a substantial portion of the "
 "contents of the database for NonCommercial purposes only;"
 msgstr ""
 
-#: ../../LICENSE.md:284
+#: ../LICENSE.md:284
 msgid ""
 "b. if You include all or a substantial portion of the database contents "
 "in a database in which You have Sui Generis Database Rights, then the "
@@ -222,24 +222,24 @@ msgid ""
 "individual contents) is Adapted Material; and"
 msgstr ""
 
-#: ../../LICENSE.md:289
+#: ../LICENSE.md:289
 msgid ""
 "c. You must comply with the conditions in Section 3(a) if You Share all "
 "or a substantial portion of the contents of the database."
 msgstr ""
 
-#: ../../LICENSE.md:292
+#: ../LICENSE.md:292
 msgid ""
 "For the avoidance of doubt, this Section 4 supplements and does not "
 "replace Your obligations under this Public License where the Licensed "
 "Rights include other Copyright and Similar Rights."
 msgstr ""
 
-#: ../../LICENSE.md:297
+#: ../LICENSE.md:297
 msgid "Section 5 -- Disclaimer of Warranties and Limitation of Liability."
 msgstr ""
 
-#: ../../LICENSE.md:299
+#: ../LICENSE.md:299
 msgid ""
 "a. UNLESS OTHERWISE SEPARATELY UNDERTAKEN BY THE LICENSOR, TO THE EXTENT "
 "POSSIBLE, THE LICENSOR OFFERS THE LICENSED MATERIAL AS-IS AND AS-"
@@ -253,7 +253,7 @@ msgid ""
 "APPLY TO YOU."
 msgstr ""
 
-#: ../../LICENSE.md:310
+#: ../LICENSE.md:310
 msgid ""
 "b. TO THE EXTENT POSSIBLE, IN NO EVENT WILL THE LICENSOR BE LIABLE TO YOU"
 " ON ANY LEGAL THEORY (INCLUDING, WITHOUT LIMITATION, NEGLIGENCE) OR "
@@ -265,18 +265,18 @@ msgid ""
 "FULL OR IN PART, THIS LIMITATION MAY NOT APPLY TO YOU."
 msgstr ""
 
-#: ../../LICENSE.md:320
+#: ../LICENSE.md:320
 msgid ""
 "c. The disclaimer of warranties and limitation of liability provided "
 "above shall be interpreted in a manner that, to the extent possible, most"
 " closely approximates an absolute disclaimer and waiver of all liability."
 msgstr ""
 
-#: ../../LICENSE.md:326
+#: ../LICENSE.md:326
 msgid "Section 6 -- Term and Termination."
 msgstr ""
 
-#: ../../LICENSE.md:328
+#: ../LICENSE.md:328
 msgid ""
 "a. This Public License applies for the term of the Copyright and Similar "
 "Rights licensed here. However, if You fail to comply with this Public "
@@ -284,13 +284,13 @@ msgid ""
 "automatically."
 msgstr ""
 
-#: ../../LICENSE.md:333
+#: ../LICENSE.md:333
 msgid ""
 "b. Where Your right to use the Licensed Material has terminated under "
 "Section 6(a), it reinstates:"
 msgstr ""
 
-#: ../../LICENSE.md:346
+#: ../LICENSE.md:346
 msgid ""
 "c. For the avoidance of doubt, the Licensor may also offer the Licensed "
 "Material under separate terms or conditions or stop distributing the "
@@ -298,32 +298,32 @@ msgid ""
 "Public License."
 msgstr ""
 
-#: ../../LICENSE.md:351
+#: ../LICENSE.md:351
 msgid "d. Sections 1, 5, 6, 7, and 8 survive termination of this Public License."
 msgstr ""
 
-#: ../../LICENSE.md:355
+#: ../LICENSE.md:355
 msgid "Section 7 -- Other Terms and Conditions."
 msgstr ""
 
-#: ../../LICENSE.md:357
+#: ../LICENSE.md:357
 msgid ""
 "a. The Licensor shall not be bound by any additional or different terms "
 "or conditions communicated by You unless expressly agreed."
 msgstr ""
 
-#: ../../LICENSE.md:360
+#: ../LICENSE.md:360
 msgid ""
 "b. Any arrangements, understandings, or agreements regarding the Licensed"
 " Material not stated herein are separate from and independent of the "
 "terms and conditions of this Public License."
 msgstr ""
 
-#: ../../LICENSE.md:365
+#: ../LICENSE.md:365
 msgid "Section 8 -- Interpretation."
 msgstr ""
 
-#: ../../LICENSE.md:367
+#: ../LICENSE.md:367
 msgid ""
 "a. For the avoidance of doubt, this Public License does not, and shall "
 "not be interpreted to, reduce, limit, restrict, or impose conditions on "
@@ -331,7 +331,7 @@ msgid ""
 "permission under this Public License."
 msgstr ""
 
-#: ../../LICENSE.md:372
+#: ../LICENSE.md:372
 msgid ""
 "b. To the extent possible, if any provision of this Public License is "
 "deemed unenforceable, it shall be automatically reformed to the minimum "
@@ -340,14 +340,14 @@ msgid ""
 "the enforceability of the remaining terms and conditions."
 msgstr ""
 
-#: ../../LICENSE.md:379
+#: ../LICENSE.md:379
 msgid ""
 "c. No term or condition of this Public License will be waived and no "
 "failure to comply consented to unless expressly agreed to by the "
 "Licensor."
 msgstr ""
 
-#: ../../LICENSE.md:383
+#: ../LICENSE.md:383
 msgid ""
 "d. Nothing in this Public License constitutes or may be interpreted as a "
 "limitation upon, or waiver of, any privileges and immunities that apply "
@@ -355,7 +355,7 @@ msgid ""
 "jurisdiction or authority."
 msgstr ""
 
-#: ../../LICENSE.md:390
+#: ../LICENSE.md:390
 msgid ""
 "Creative Commons is not a party to its public licenses. Notwithstanding, "
 "Creative Commons may elect to apply one of its public licenses to "
@@ -374,7 +374,7 @@ msgid ""
 "of the public licenses."
 msgstr ""
 
-#: ../../LICENSE.md:407
+#: ../LICENSE.md:407
 msgid "Creative Commons may be contacted at creativecommons.org."
 msgstr ""
 

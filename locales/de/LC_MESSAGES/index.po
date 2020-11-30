@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Nitrokey Documentation \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-11-30 17:14+0100\n"
+"POT-Creation-Date: 2020-11-30 17:40+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,19 +18,19 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.6.0\n"
 
-#: ../../index.md:2
+#: ../index.md:2
 msgid "editLink: false"
 msgstr ""
 
-#: ../../index.md:4
+#: ../index.md:4
 msgid "img"
 msgstr ""
 
-#: ../../index.md:6
+#: ../index.md:6
 msgid "Nitrokey Documentation"
 msgstr ""
 
-#: ../../index.md:7
+#: ../index.md:7
 msgid "Secure your digital life"
 msgstr ""
 
