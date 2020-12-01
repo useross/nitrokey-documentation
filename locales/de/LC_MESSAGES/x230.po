@@ -4,18 +4,21 @@
 # Documentation package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Nitrokey Documentation \n"
+"Project-Id-Version: Nitrokey Documentation\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-11-30 17:40+0100\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"PO-Revision-Date: 2020-12-01 17:00+0000\n"
+"Last-Translator: Weblate Admin <ben@dotplex.com>\n"
+"Language-Team: German <https://translate.nitrokey.com/projects/"
+"nitrokey-documentation/documentation-x230/de/>\n"
+"Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: Weblate 4.3.1\n"
 "Generated-By: Babel 2.6.0\n"
 
 #: ../x230/default-boot.md:1 ../x230/qubes/default-boot.md:1
@@ -560,7 +563,7 @@ msgstr ""
 
 #: ../x230/index.md:2
 msgid "editLink: false"
-msgstr ""
+msgstr "editLink: falsch"
 
 #: ../x230/index.md:5
 msgid "NitroPad X230"
@@ -995,7 +998,7 @@ msgstr ""
 #: ../x230/ubuntu/verify-sealed-hardware.md:13
 #: ../x230/verify-sealed-hardware.md:9 ../x230/verify-sealed-hardware.md:13
 msgid "img"
-msgstr ""
+msgstr "img"
 
 #: ../x230/qubes/verify-sealed-hardware.md:11
 #: ../x230/ubuntu/verify-sealed-hardware.md:11
@@ -1108,4 +1111,3 @@ msgid ""
 "and follow the on-screen guide. After that the secret and counter should "
 "be both reset to a new value."
 msgstr ""
-
