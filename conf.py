@@ -38,7 +38,7 @@ release = ''
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['recommonmark'
+extensions = ['recommonmark','sphinx_markdown_tables'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -58,7 +58,7 @@ master_doc = 'index'
 #
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
-language = 'en'
+language = 'de'
 
 # Directories in which to search for additional message catalogs, relative to the source directory. The directories on this path are searched by the standard gettext module.
 locale_dirs = ['locales/']
@@ -92,7 +92,25 @@ pygments_style = None
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'alabaster'
+# html_theme = 'alabaster'
+
+html_theme = "sphinx_rtd_theme"
+
+html_theme_options = {
+	'logo_only': True,
+	'display_version': True,
+	'prev_next_buttons_location': 'bottom',
+	'style_external_links': True,
+	# Toc options
+	'collapse_navigation': False,
+	'sticky_navigation': False,
+	'navigation_depth': 3,
+	'includehidden': True,
+	'titles_only': False}
+
+html_title = "My amazing documentation"
+html_logo = "path/to/logo.png"
+html_favicon = "path/to/favicon.ico"
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
