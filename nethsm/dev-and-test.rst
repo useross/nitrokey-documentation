@@ -8,7 +8,5 @@ Alternatively you can run the `NetHSM Docker container <https://hub.docker.com/r
 
 ::
 
-   $ sudo docker run --rm -ti \
-       --device=/dev/kvm:/dev/kvm --device=/dev/net/tun:/dev/net/tun \
-       --cap-add=NET_ADMIN -p8443:8443 nitrokey/nethsm:testing
+   $ sudo docker run --rm -ti --device=/dev/kvm:/dev/kvm --device=/dev/net/tun:/dev/net/tun --cap-add=NET_ADMIN -p8443:8443 nitrokey/nethsm:testing
 

@@ -14,6 +14,11 @@ This tutorial demonstrates how to access the NetHMS via `nitropy <https://github
    If you use a NetHSM demo instance with a self-signed certificate, for
    example using the Docker image, you will have to use the ``--no-verify-tls``
    option for ``nitropy`` to skip the certificate check.
+   
+.. note::
+
+	 First set the value of $NETHSM_HOST to the IP address or URL of your NetHSM.
+	 Our demo server can be reached at https://nethsmdemo.nitrokey.com/
 
 .. include:: _tutorial.rst
    :start-after: .. start:: info
