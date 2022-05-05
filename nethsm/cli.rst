@@ -24,11 +24,7 @@ This tutorial demonstrates how to access the NetHMS via `nitropy <https://github
 Request Host Information
 ------------------------
 
-.. role:: bash(code)
-   :language:bash
-
-.. code:: bash
-.. highlight:: bash
+::
 
     $ nitropy nethsm --host $NETHSM_HOST info
 
@@ -97,7 +93,7 @@ A new NetHSM needs to be provisioned first with passphrases and the current time
    :start-after: .. start:: unattended-boot-off
    :end-before: .. end
 
-.. code:: bash
+::
 
    $ nitropy nethsm --host $NETHSM_HOST --username admin --password adminPassphrase set-unattended-boot on
 
@@ -117,7 +113,7 @@ A new NetHSM needs to be provisioned first with passphrases and the current time
    :start-after: .. start:: add-user
    :end-before: .. end
 
-.. code:: bash
+::
 
    $ nitropy nethsm --host $NETHSM_HOST --username admin --password adminPassphrase add-user --user-id operator --real-name "Jane User" --role operator --passphrase opPassphrase
 
@@ -134,6 +130,7 @@ A new NetHSM needs to be provisioned first with passphrases and the current time
    :end-before: .. end
 
 ::
+
    $ nitropy nethsm --host $NETHSM_HOST --username admin --password adminPassphrase generate-key --algorithm RSA --mechanism RSA_Signature_PSS_SHA256 --mechanism RSA_Decryption_PKCS1 --length 2048 --key-id myFirstKey
 
 ::
