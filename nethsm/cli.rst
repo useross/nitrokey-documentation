@@ -192,6 +192,15 @@ A new NetHSM needs to be provisioned first with passphrases and the current time
 
   $ nitropy nethsm --host $NETHSM_HOST --username operator --password opPassphrase get-key myFirstKey --public-key > public.pem
 
+Delete certicates or keys:
+--------------------------
+
+::
+
+  $ nitropy nethsm {delete-certificate|delete-key}
+
+::
+
 We can inspect the key with openssl and use it for encryption or signature verification (as described in the next section):
 
 ::
@@ -297,13 +306,6 @@ It is possible to set and query certificates for the keys stored on a NetHSM ins
 
     $ nitropy nethsm --host $NETHSM_HOST --username operator --password opPassphrase get-certificate myFirstKey > /tmp/cert.pem
 
-::
-
-    $ nitropy nethsm --host $NETHSM_HOST --username admin --password adminPassphrase  delete-certificate myFirstKey
-
-::
-
-    Deleted certificate for key myFirstKey on NetHSM localhost:8443
 
 .. include:: _tutorial.rst
    :start-after: .. start:: key-csr
