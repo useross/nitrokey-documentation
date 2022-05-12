@@ -21,8 +21,8 @@ This tutorial demonstrates how to access the NetHMS via `nitropy <https://github
 	 Our demo server can be reached at https://nethsmdemo.nitrokey.com/
 
 
-Request Host Information
-------------------------
+Device Information & Status
+
 
 ::
 
@@ -34,10 +34,7 @@ Request Host Information
     Vendor:  Nitrokey GmbH
     Product: NetHSM
 
-Request Device Status
----------------------
-
-.. code:: bash
+::
 
     $ nitropy nethsm --host $NETHSM_HOST state
 
@@ -47,8 +44,8 @@ Request Device Status
 
 ::
 
-Provision
----------
+Provisioning
+------------
 
 A new NetHSM needs to be provisioned first with passphrases and the current time. The Admin Passphrase is the Administrator’s passphrase, which is the super user of the NetHSM. The Unlock Passphrase is used to encrypt NetHSM’s confidential data store.
 
@@ -56,7 +53,7 @@ A new NetHSM needs to be provisioned first with passphrases and the current time
 
   The NetHSM demo instance at nethsmdemo.nitrokey.com is already provisioned.
 
-.. code:: bash
+::
 
    $ nitropy nethsm --host $NETHSM_HOST provision --admin-passphrase adminPassphrase --unlock-passphrase unlockPassphrase
 
@@ -68,7 +65,7 @@ A new NetHSM needs to be provisioned first with passphrases and the current time
    :start-after: .. start:: boot-mode
    :end-before: .. end
 
-.. code:: bash
+::
 
    $ nitropy nethsm --host $NETHSM_HOST --username admin --password adminPassphrase get-config --unattended-boot
 
@@ -109,9 +106,10 @@ A new NetHSM needs to be provisioned first with passphrases and the current time
    :start-after: .. start:: roles
    :end-before: .. end
 
-.. include:: _tutorial.rst
-   :start-after: .. start:: add-user
-   :end-before: .. end
+**Creating & Deleting Users**
+
+
+Now create a new user with the operator role that can be used to sign and decrypt data. Note that the NetHSM assigns a random user ID if we don’t specify it.
 
 ::
 
@@ -121,9 +119,12 @@ A new NetHSM needs to be provisioned first with passphrases and the current time
 
    User operator added to NetHSM localhost:8443
 
-.. include:: _tutorial.rst
-   :start-after: .. start:: key-management
-   :end-before: .. end
+::
+
+   $ nitropy nethsm --host $NETHSM_HOST delete-user "Jane User"
+
+Key Management
+--------------
 
 .. include:: _tutorial.rst
    :start-after: .. start:: generate-key
@@ -191,9 +192,6 @@ A new NetHSM needs to be provisioned first with passphrases and the current time
 ::
 
   $ nitropy nethsm --host $NETHSM_HOST --username operator --password opPassphrase get-key myFirstKey --public-key > public.pem
-
-Delete certicates or keys:
---------------------------
 
 ::
 
@@ -320,9 +318,6 @@ It is possible to set and query certificates for the keys stored on a NetHSM ins
    :start-after: .. start:: key-operations
    :end-before: .. end
 
-Decryption
-----------
-
 We can encrypt data for the key stored on the NetHSM using openssl. (public.pem is the public key file that we created in the Show Key Details section.)
 
 ::
@@ -347,7 +342,7 @@ Similarily, we can sign data using the key on the NetHSM. For RSA and ECDSA, we 
 
 ::
 
-	$ openssl dgst -sha256 -binary data | base64 > data.digest#
+	$ openssl dgst -sha256 -binary data | base64 > data.digest
 
 ::
 
@@ -371,10 +366,10 @@ And then use openssl to verify the signature:
 
 ::
 
-Backups
--------
+Creating Backups
+----------------
 
-It is possible to crate a backup of the NetHSM that captures both the configuration and the stored keys. In order to create a backup, you first have to set a backup passphrase that is used to encrypt the backup file:
+It is possible to create a backup of the NetHSM that captures both the configuration and the stored keys. In order to create a backup, you first have to set a backup passphrase that is used to encrypt the backup file:
 
 .. code:: bash
 
@@ -409,6 +404,9 @@ Then can you generate the backup and write it to a file:
 	Backup for localhost:8443 written to /tmp/backup
 
 ::
+
+Restoring Backups
+-----------------
 
 This backup file can be restored on an unprovisioned NetHSM instance:
 
@@ -464,9 +462,10 @@ This backup file can be restored on an unprovisioned NetHSM instance:
 
    Backup restored on NetHSM localhost:8443
 
-.. include:: _tutorial.rst
-   :start-after: .. start:: update
-   :end-before: .. end
+::
+
+Updating NetHSM
+---------------
 
 .. code:: bash
 
